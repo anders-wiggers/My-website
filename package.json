@@ -1,0 +1,30 @@
+{
+  "name": "wapp",
+  "version": "1.0.0",
+  "description": "Personal web app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "author": "Anders Bille Wiggers",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  },
+  "dependencies": {
+    "@zeit/next-css": "^1.0.1",
+    "next": "^8.0.3",
+    "react": "^16.8.6",
+    "react-aria": "^0.9.5",
+    "react-dom": "^16.8.6",
+    "react-fluid-container": "^0.6.0",
+    "react-measure": "^2.2.5",
+    "react-motion": "^0.5.2",
+    "react-scripts": "^2.1.8",
+    "react-scroll": "^1.7.11",
+    "react-typed": "^1.1.2"
+  }
+}
