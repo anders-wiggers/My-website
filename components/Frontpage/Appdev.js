@@ -2,8 +2,40 @@ import react, { Component } from 'react';
 import _JSXStyle from 'styled-jsx/style';
 import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
 import AppdevTab from './AppdevTab';
+import { Motion, spring } from 'react-motion';
+import Typed from 'react-typed';
 
 class Appdev extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			lang: 'android',
+			pushed: 0
+		};
+	}
+
+	handleLanguage = (langValue) => {
+		if (langValue === 'android') {
+			this.setState({
+				pushed: 0
+			});
+		}
+
+		if (langValue === 'react') {
+			this.setState({
+				pushed: 28
+			});
+		}
+
+		if (langValue === 'flutter') {
+			this.setState({
+				pushed: 56
+			});
+		}
+
+		this.setState({ lang: langValue });
+	};
+
 	render() {
 		return (
 			<Element name="test1" className="element">
@@ -12,16 +44,57 @@ class Appdev extends Component {
 						<h1 id="title">Application Development</h1>
 						<div className="firstText">
 							<div className="row topPadding">
-								<div className="col-8 red">
-									<AppdevTab />
+								<div className="col-8 ">
+									<AppdevTab onSelectLanguage={this.handleLanguage} />
 								</div>
-								<div className="col-4 blue phone">
-									<img className="iphone" src="/static/images/black-mockup.png" />
+								<div className="col-4  phone">
+									<div className="iphone-bg">
+										<Motion style={{ x: spring(this.state.pushed) }}>
+											{({ x }) => (
+												// children is a callback which should accept the current value of
+												// `style`
+												<div
+													className="moveAble"
+													style={{
+														WebkitTransform: `translate3d(-${x}vh, 0, 0)`,
+														transform: `translate3d(-${x}vh, 0, 0)`
+													}}
+												>
+													<div className="onphone">
+														<p>Skrt 📱</p>
+													</div>
+													<div className="onphone">
+														<p>Lets dev som' Apps 💻</p>
+													</div>
+													<div className="onphone">
+														<p>Lets dev som' Apps 💻</p>
+													</div>
+												</div>
+											)}
+										</Motion>
+									</div>
+									<div
+										id="ontop"
+										style={{
+											WebkitTransform: `translate3d(0px, 0, 0)`
+										}}
+									>
+										<img className="iphone" src="/static/images/black-mockup.png" />
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 					<style jsx>{`
+						.onphone {
+							width: 28vh;
+							display: table-cell;
+							color: white;
+						}
+						#ontop {
+							z-index: 2;
+							margin: -60vh auto;
+						}
 						.liste {
 							list-style: none;
 							flex-direction: row;
@@ -33,6 +106,50 @@ class Appdev extends Component {
 						}
 						.iphone {
 							height: 60vh;
+						}
+
+						.moveAble {
+							height: 60vh;
+							background-color: #a4cc44;
+							width: 84vh;
+							background: #92d600;
+							background: -moz-linear-gradient(
+								left,
+								#92d600 0%,
+								#00cea5 27%,
+								#00b7ea 56%,
+								#009eed 78%,
+								#4790c1 100%
+							);
+							background: -webkit-linear-gradient(
+								left,
+								#92d600 0%,
+								#00cea5 27%,
+								#00b7ea 56%,
+								#009eed 78%,
+								#4790c1 100%
+							);
+							background: linear-gradient(
+								to right,
+								#92d600 0%,
+								#00cea5 27%,
+								#00b7ea 56%,
+								#009eed 78%,
+								#4790c1 100%
+							);
+							filter: progid:DXImageTransform.Microsoft.gradient(
+									startColorstr='#92d600',
+									endColorstr='#4790c1',
+									GradientType=1
+								);
+						}
+
+						.iphone-bg {
+							overflow: hidden;
+							height: 60vh;
+							width: 28vh;
+							margin: 0 auto;
+							border-radius: 50px;
 						}
 						.firstText {
 							line-height: 0;
@@ -58,11 +175,15 @@ class Appdev extends Component {
 							left: 50%;
 						}
 						.padding {
-							padding-top: 60px;
+							padding-top: 80px;
 						}
 
 						#title {
 							text-align: center;
+						}
+
+						p {
+							line-height: 60vh;
 						}
 					`}</style>
 				</div>
