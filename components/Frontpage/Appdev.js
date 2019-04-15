@@ -61,13 +61,87 @@ class Appdev extends Component {
 													}}
 												>
 													<div className="onphone">
-														<p>Skrt 📱</p>
+														<p>
+															{'private Dev dev;'}
+															<br />
+															<br />
+															{'void onCreate(Bundle icicle) {'}
+															<br />
+															&nbsp; &nbsp;{'super.onCreate(icicle);'}
+															<br />
+															&nbsp; &nbsp;{'dev = new Dev(22);'}
+															<br />
+															&nbsp; &nbsp;{'Creator = dev.getCreator;'}
+															<br />
+															{'}'}
+															<br />
+															<br />
+															{'void onDestroy()'}
+															<br />
+															{'{'}
+															<br />
+															&nbsp; &nbsp;{'super.onDestroy();'}
+															<br />
+															&nbsp; &nbsp;{'dev.putBoolean("gpsOn");'}
+															<br />
+															&nbsp; &nbsp;{'Creator = dev.getCreator;'}
+															<br />
+															{'}'}
+														</p>
 													</div>
 													<div className="onphone">
-														<p>Lets dev som' Apps 💻</p>
+														<p>
+															{'class Component extends Component {'}
+															<br />
+															&nbsp;{'constructor(props) {'}
+															<br />
+															&nbsp; &nbsp;{'super(props);'}
+															<br />
+															&nbsp; &nbsp;{'this.state = {'}
+															<br />
+															&nbsp; &nbsp; &nbsp;{'lang: "Eng",'}
+															<br />
+															&nbsp; &nbsp; &nbsp;{'pushed: 0'}
+															<br />
+															&nbsp; &nbsp;{'}'}
+															<br />
+															&nbsp;{'}'}
+															<br />
+															<br />
+															&nbsp;{'render() {'}
+															<br />
+															&nbsp;&nbsp;{'<Text>Press me</Text>'}
+															<br />
+															&nbsp;{'}'}
+															<br />
+															{'}'}
+															<br />
+														</p>
 													</div>
 													<div className="onphone">
-														<p>Lets dev som' Apps 💻</p>
+														<p>
+															{'class MyHome extends StatelessWidget {'}
+															<br />
+															&nbsp;{'MyHomePage({this.title})'}
+															<br />
+															<br />
+															&nbsp;{'@overrite'}
+															<br />
+															&nbsp;{'Widget build(){'}
+															<br />
+															&nbsp;&nbsp;{'return new Scaffold('}
+															<br />
+															&nbsp;&nbsp;{'appBar: new AppBar('}
+															<br />
+															&nbsp;&nbsp;&nbsp;{'tittle:new Text("dev"),'}
+															<br />
+															&nbsp;&nbsp;{'),'}
+															<br />
+															&nbsp;{')'}
+															<br />
+															{'}'}
+															<br />
+														</p>
 													</div>
 												</div>
 											)}
@@ -90,6 +164,8 @@ class Appdev extends Component {
 							width: 28vh;
 							display: table-cell;
 							color: white;
+							padding-left: 15px;
+							padding-right: 15px;
 						}
 						#ontop {
 							z-index: 2;
@@ -145,10 +221,12 @@ class Appdev extends Component {
 						}
 
 						.iphone-bg {
+							padding-left: 5px;
 							overflow: hidden;
 							height: 60vh;
 							width: 28vh;
 							margin: 0 auto;
+							font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 							border-radius: 50px;
 						}
 						.firstText {
@@ -167,6 +245,7 @@ class Appdev extends Component {
 						.main {
 							line-height: 100vh;
 							height: 100vh;
+							min-height: 700px;
 							background: #f3f3f3;
 							color: #333;
 							width: 100vw;
@@ -183,7 +262,9 @@ class Appdev extends Component {
 						}
 
 						p {
-							line-height: 60vh;
+							padding-top: 50px;
+							line-height: 3vh;
+							text-align: left;
 						}
 					`}</style>
 				</div>

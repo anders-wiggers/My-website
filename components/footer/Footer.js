@@ -23,8 +23,10 @@ class Footer extends Component {
 					<div className="container">
 						<div className="row">
 							<div className="col-sm">
-								<span className="fa fa-github fitme" />
-								<a>Github</a>
+								<a href="https://github.com/anders-wiggers" target="_blank">
+									<span className="fa fa-github fitme" />
+									<a>Github</a>
+								</a>
 							</div>
 							<div className="col-sm">
 								<p>|</p>
@@ -68,6 +70,19 @@ class Footer extends Component {
 					p {
 						padding: 10px;
 						margin: 0;
+					}
+
+					a {
+						color: white;
+					}
+
+					a:visited {
+						color: white;
+					}
+
+					a:hover {
+						text-decoration: none;
+						color: #d8d8d8;
 					}
 				`}</style>
 			</footer>
