@@ -4,7 +4,7 @@ import Appdev from '../components/Frontpage/Appdev.js';
 import Webdev from '../components/Frontpage/Webdev.js';
 
 const Index = () => (
-	<Layout>
+	<Layout title="Anders Wiggers" menu="aw">
 		<Entry />
 		<Appdev />
 		<Webdev />

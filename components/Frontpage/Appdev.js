@@ -3,7 +3,6 @@ import _JSXStyle from 'styled-jsx/style';
 import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
 import AppdevTab from './AppdevTab';
 import { Motion, spring } from 'react-motion';
-import Typed from 'react-typed';
 
 class Appdev extends Component {
 	constructor(props) {
@@ -183,7 +182,6 @@ class Appdev extends Component {
 						.iphone {
 							height: 60vh;
 						}
-
 						.moveAble {
 							height: 60vh;
 							background-color: #a4cc44;
@@ -219,7 +217,6 @@ class Appdev extends Component {
 									GradientType=1
 								);
 						}
-
 						.iphone-bg {
 							padding-left: 5px;
 							overflow: hidden;
@@ -232,20 +229,13 @@ class Appdev extends Component {
 						.firstText {
 							line-height: 0;
 						}
-
 						.phone {
 							text-align: center;
-						}
-						.red {
-							background-color: red;
-						}
-						.blue {
-							background-color: blue;
 						}
 						.main {
 							line-height: 100vh;
 							height: 100vh;
-							min-height: 700px;
+							min-height: 800px;
 							background: #f3f3f3;
 							color: #333;
 							width: 100vw;
@@ -256,11 +246,9 @@ class Appdev extends Component {
 						.padding {
 							padding-top: 80px;
 						}
-
 						#title {
 							text-align: center;
 						}
-
 						p {
 							padding-top: 50px;
 							line-height: 3vh;

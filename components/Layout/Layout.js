@@ -5,7 +5,7 @@ import Footer from '../footer/Footer';
 const Layout = (props) => (
 	<div style={body}>
 		<Head>
-			<title>Anders Wiggers</title>
+			<title>{props.title}</title>
 			<link
 				rel="stylesheet"
 				href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -24,7 +24,7 @@ const Layout = (props) => (
 				href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
 			/>
 		</Head>
-		<Navbar />
+		<Navbar menu={props.menu} />
 		<div className="container" style={defualtPadding}>
 			{props.children}
 		</div>
