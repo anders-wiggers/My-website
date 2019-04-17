@@ -8,6 +8,7 @@ class Navbar extends Component {
 			aw: 'nav-item',
 			soft: 'nav-item',
 			pro: 'nav-item',
+			res: 'nav-item',
 			cv: 'nav-item',
 			contact: 'nav-item'
 		};
@@ -39,6 +40,11 @@ class Navbar extends Component {
 				contact: ' active'
 			});
 		}
+		if (this.props.menu === 'res') {
+			this.setState({
+				res: ' active'
+			});
+		}
 	}
 
 	render() {
@@ -61,13 +67,13 @@ class Navbar extends Component {
 								<a className="nav-link">PROJECTS</a>
 							</Link>
 						</li>
-						<li className={this.state.contact}>
-							<Link href="/contact">
+						<li className={this.state.res}>
+							<Link href="/resources">
 								<a className="nav-link">RESOURCES</a>
 							</Link>
 						</li>
 						<li className={this.state.cv}>
-							<Link href="/contact">
+							<Link href="/cv">
 								<a className="nav-link">CV</a>
 							</Link>
 						</li>

@@ -43,6 +43,7 @@ const body = {
 
 const defualtPadding = {
 	padding: '10px',
+	minHeight: '100vh',
 	marginTop: '50px'
 };
 

@@ -1,4 +1,4 @@
-![node](https://img.shields.io/node/v/react.svg) ![GitHub last commit](https://img.shields.io/github/last-commit/anders-wiggers/My-website.svg) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/anders-wiggers/My-website.svg)![GitHub top language](https://img.shields.io/github/languages/top/anders-wiggers/My-website.svg)
+![node](https://img.shields.io/node/v/react.svg) ![GitHub last commit](https://img.shields.io/github/last-commit/anders-wiggers/My-website.svg) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/anders-wiggers/My-website.svg) ![GitHub top language](https://img.shields.io/github/languages/top/anders-wiggers/My-website.svg)
 
 # ANDERS WIGGERS Web application
 

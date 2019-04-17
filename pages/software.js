@@ -3,7 +3,7 @@ import Ripo from '../components/Software/Ripo';
 
 const Software = () => (
 	<Layout title="Software" menu="soft">
-		<Ripo />
+		<Ripo name="anders-wiggers" />
 	</Layout>
 );
 

@@ -56,7 +56,6 @@ class Entry extends Component {
 						font-size: 2.5em;
 						text-align: center;
 						line-height: 80vh;
-						width: 100vw;
 						position: relative;
 						margin-left: -50vw;
 						left: 50%;

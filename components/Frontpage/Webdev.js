@@ -25,10 +25,10 @@ class Webdev extends Component {
 						<div className="row padding-fix">
 							<div className="col-8">
 								<span>
-									I have been developing on the web stack since I was 10. The last two years I've
-									focused on full stack development. My interest in this started with an IoT course
-									were we learned how to develop an API and back end with Express and Node.js and I've
-									been using these tools ever since.
+									I started using the React framework after a workshop were I learned about React
+									Native for cross-platform mobile development. I found that the concept of the
+									component-based layout system was fascinating to work with. And I've been using
+									React for some time now.
 								</span>
 							</div>
 							<div className="col-4 ">
@@ -41,20 +41,18 @@ class Webdev extends Component {
 							</div>
 							<div className="col-8">
 								<span>
-									I have been developing on the web stack since I was 10. The last two years I've
-									focused on full stack development. My interest in this started with an IoT course
-									were we learned how to develop an API and back end with Express and Node.js and I've
-									been using these tools ever since.
+									For backend work, I have been using Express as it is a light-weight web application
+									framework to help organize my web application into an MVC architecture on the server
+									side.
 								</span>
 							</div>
 						</div>
 						<div className="row padding-fix">
 							<div className="col-8">
 								<span>
-									I have been developing on the web stack since I was 10. The last two years I've
-									focused on full stack development. My interest in this started with an IoT course
-									were we learned how to develop an API and back end with Express and Node.js and I've
-									been using these tools ever since.
+									For database management, I've tried a lot of different solutions. This website uses
+									Mongo DB as it was a system I've never tried before, however, i also have experience
+									with MySQL and SQLite
 								</span>
 							</div>
 							<div className="col-4 ">
