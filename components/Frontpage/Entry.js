@@ -6,7 +6,7 @@ import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, 
 class Entry extends Component {
 	render() {
 		return (
-			<div id="fiesta" class="fiesta">
+			<div id="fiesta" className="fiesta">
 				<div id="typed">
 					<Typed
 						strings={[

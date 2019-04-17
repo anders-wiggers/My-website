@@ -1,10 +1,9 @@
 import Layout from '../components/Layout/Layout.js';
+import Ripo from '../components/Software/Ripo';
 
 const Software = () => (
 	<Layout title="Software" menu="soft">
-		<div>
-			<h1>SOFTWARE IS COOL</h1>
-		</div>
+		<Ripo />
 	</Layout>
 );
 
