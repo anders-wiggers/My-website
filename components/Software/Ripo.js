@@ -2,14 +2,15 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 
-const Repo = ({ repo, index }) => (
+const Repo = ({ repo }) => (
 	<tr>
-		<td>{index + 1}</td>
 		<td className="repo-name">
 			<a href={repo.html_url} target="_blank">
 				{repo.name}
 			</a>
 		</td>
+		<td>{repo.language}</td>
+		<td>{repo.size}</td>
 		<td>{repo.stargazers_count} Stars</td>
 		<style jsx>{`
 			a {
@@ -89,12 +90,13 @@ export default class GitHubRepos extends React.Component {
 				<table className="table table-striped">
 					<thead>
 						<tr>
-							<th>#</th>
-							<th>Repo Name</th>
+							<th>Repository Name</th>
+							<th>Language</th>
+							<th>Size</th>
 							<th>Stars Count</th>
 						</tr>
 					</thead>
-					<tbody>{repos.map((repo, index) => <Repo repo={repo} index={index} key={repo.id} />)}</tbody>
+					<tbody>{repos.map((repo) => <Repo repo={repo} key={repo.id} />)}</tbody>
 				</table>
 				<style jsx>{`
 					h3 {
