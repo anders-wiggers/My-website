@@ -1,39 +1,127 @@
 import React, { Component } from 'react';
-import _JSXStyle from 'styled-jsx/style';
+import PropTypes from 'prop-types';
+import axios from 'axios';
 
-export class Ripo extends Component {
+const Repo = ({ repo, index }) => (
+	<tr>
+		<td>{index + 1}</td>
+		<td className="repo-name">
+			<a href={repo.html_url} target="_blank">
+				{repo.name}
+			</a>
+		</td>
+		<td>{repo.stargazers_count} Stars</td>
+		<style jsx>{`
+			a {
+				color: #364350;
+			}
+		`}</style>
+	</tr>
+);
+
+export default class GitHubRepos extends React.Component {
 	constructor(props) {
 		super(props);
+
 		this.state = {
-			ripoNames: []
+			repos: [],
+			loading: true,
+			error: null
 		};
 	}
 
 	componentDidMount() {
-		let fetchedData;
-		fetch('https://api.github.com/users/' + this.props.reponame + '/repos?per_page=15')
-			.then((result) => {
-				return result.json;
+		axios
+			.get(window.encodeURI(`https://api.github.com/users/` + this.props.name + `/repos`))
+			.then((response) => {
+				const repos = response.data;
+				this.setState({
+					repos,
+					loading: false
+				});
 			})
-			.then((data) => {
-				this.setState({ ripoNames: data });
-				fetchedData = data;
-				console.log(data);
+			.catch((error) => {
+				this.setState({
+					error: error,
+					loading: false
+				});
 			});
 	}
+
+	renderLoading() {
+		return (
+			<div className="loader">
+				<img src="https://media1.tenor.com/images/893ee126100411e582efc88f6a63996c/tenor.gif" />
+				<style jsx>{`
+					.loader {
+						text-align: center;
+						height: 70vh;
+						line-height: 70vh;
+					}
+					img {
+						height: 50px;
+					}
+				`}</style>
+			</div>
+		);
+	}
+
+	renderError() {
+		return (
+			<div>
+				<div>Sorry, an error ocurred: {this.state.error.response.data.message}</div>
+			</div>
+		);
+	}
+
+	renderList() {
+		const { error, repos } = this.state;
+
+		if (error) {
+			console.log(error);
+			return this.renderError();
+		}
+
+		return (
+			<div className="smallCon">
+				<h3>My Software Repository</h3>
+
+				<table className="table table-striped">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>Repo Name</th>
+							<th>Stars Count</th>
+						</tr>
+					</thead>
+					<tbody>{repos.map((repo, index) => <Repo repo={repo} index={index} key={repo.id} />)}</tbody>
+				</table>
+				<style jsx>{`
+					h3 {
+						padding-bottom: 20px;
+					}
+					.smallCon {
+						display: table-cell;
+						vertical-align: middle;
+					}
+				`}</style>
+			</div>
+		);
+	}
+
 	render() {
 		return (
-			<div className="container fullScreen">
-				<h3>My personal Software Repository</h3>
+			<div>
+				<div className="reps">{this.state.loading ? this.renderLoading() : this.renderList()}</div>
 				<style jsx>{`
-					.fullScreen {
-						min-height: 100vh;
-						padding-top: 30px;
+					.reps {
+						table-layout: fixed;
+						width: 100%;
+						display: table;
+						height: 86vh;
 					}
 				`}</style>
 			</div>
 		);
 	}
 }
-
-export default Ripo;

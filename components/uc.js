@@ -6,20 +6,31 @@ export default class UC extends Component {
 		super(props);
 		this.state = {
 			text: 'UNDER CONSTRUCTION 🏗',
-			font: true
+			font: true,
+			counter: 0,
+			buttonName: 'Add Another Crane 🏗'
 		};
 	}
 
 	MoreCranes = () => {
-		if (this.state.font) {
+		if (this.state.counter < 11) {
+			if (this.state.font) {
+				this.setState({
+					text: '🏗 ' + this.state.text,
+					font: false
+				});
+			} else {
+				this.setState({
+					text: this.state.text + ' 🏗',
+					font: true
+				});
+			}
 			this.setState({
-				text: '🏗 ' + this.state.text,
-				font: false
+				counter: this.state.counter + 1
 			});
 		} else {
 			this.setState({
-				text: this.state.text + ' 🏗',
-				font: true
+				buttonName: 'Okay, no more cranes 🤨'
 			});
 		}
 	};
@@ -28,7 +39,7 @@ export default class UC extends Component {
 		return (
 			<div className="uc">
 				<h3>{this.state.text}</h3>
-				<button onClick={this.MoreCranes}>Add Another Crane 🏗</button>
+				<button onClick={this.MoreCranes}>{this.state.buttonName}</button>
 				<style jsx>{`
 					.uc {
 						text-align: center;
