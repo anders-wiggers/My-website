@@ -39,19 +39,17 @@ export default class UC extends Component {
 		return (
 			<div className="uc">
 				<h3>{this.state.text}</h3>
-				<button onClick={this.MoreCranes}>{this.state.buttonName}</button>
+				<div className="flat-button" onClick={this.MoreCranes}>
+					{this.state.buttonName}
+				</div>
 				<style jsx>{`
 					.uc {
 						text-align: center;
 						width: 100vw;
 						margin-left: -50vw;
-						margin-top: 100px;
+						margin-top: 20vh;
 						left: 50%;
 						position: relative;
-						color: black;
-						border-top: dotted;
-						border-bottom: dotted;
-						border-color: red;
 					}
 
 					h3 {
@@ -62,6 +60,40 @@ export default class UC extends Component {
 					button {
 						padding: 20px;
 						margin-bottom: 50px;
+					}
+
+					.flat-button {
+						position: relative;
+						width: 250px;
+						height: 60px;
+						background: #e74c3c;
+						margin: 0 auto;
+						margin-top: 40px;
+						overflow: hidden;
+						z-index: 1;
+						cursor: pointer;
+						transition: color .3s;
+						/* Typo */
+						line-height: 60px;
+						text-align: center;
+						color: #fff;
+					}
+
+					.flat-button:after {
+						position: absolute;
+						top: 90%;
+						left: 0;
+						width: 100%;
+						height: 100%;
+						background: #c0392b;
+						content: "";
+						z-index: -2;
+						transition: transform .3s;
+					}
+
+					.flat-button:hover::after {
+						transform: translateY(-80%);
+						transition: transform .3s;
 					}
 				`}</style>
 			</div>
