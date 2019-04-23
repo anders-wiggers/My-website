@@ -32,13 +32,17 @@ class Footer extends Component {
 								<p>|</p>
 							</div>
 							<div className="col-sm">
-								<span className="fa fa-linkedin fitme" />LinkedIn
+								<a href="https://linkedin.com/in/anders-bille-wiggers-a656b9150/" target="_blank">
+									<span className="fa fa-linkedin fitme" />LinkedIn
+								</a>
 							</div>
 							<div className="col-sm">
 								<p>|</p>
 							</div>
 							<div className="col-sm ">
-								<span className="fa fa-facebook fitme" />Facebook
+								<a href="https://www.facebook.com/anders.wiggers" target="_blank">
+									<span className="fa fa-facebook fitme" />Facebook
+								</a>
 							</div>
 						</div>
 					</div>
