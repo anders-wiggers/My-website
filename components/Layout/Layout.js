@@ -34,7 +34,7 @@ const Layout = (props) => (
 
 const body = {
 	color: '#000',
-	background: '#fff',
+	backgroundColor: '#fff',
 	fontFamily:
 		'-apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", "Fira Sans", Avenir, "Helvetica Neue", "Lucida Grande", sans-serif',
 	height: '100vh',

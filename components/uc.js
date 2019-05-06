@@ -63,6 +63,7 @@ export default class UC extends Component {
 					}
 
 					.flat-button {
+						border-radius: 3px;
 						position: relative;
 						width: 250px;
 						height: 60px;
