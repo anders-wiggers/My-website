@@ -53,7 +53,7 @@ export class ResLoader extends Component {
 
 		return (
 			<div className="holder">
-				{res.map((res) => <ResItem name={res.resourceName} disc={res.resourceDescription} link={res.link} />)}
+				{res.map((ress) => <ResItem name={ress.resourceName} disc={ress.resourceDescription} link={ress.link} />)}
 
 				<style jsx>{`
 					.holder {
