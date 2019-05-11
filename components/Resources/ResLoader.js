@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ResItem from './ResItem';
 import axios from 'axios';
 
-export class ResLoader extends Component {
+export default class ResLoader extends React.Component {
 	constructor(props) {
 		super(props);
 
@@ -34,6 +34,7 @@ export class ResLoader extends Component {
 	renderLoading() {
 		return (
 			<div className="loader">
+		        <img src="https://yalantis.com/uploads/ckeditor/pictures/365/content_Loading-Loop-1.gif"></img>
 				<style jsx>{`
 					.loader {
 						text-align: center;
@@ -41,15 +42,33 @@ export class ResLoader extends Component {
 						line-height: 70vh;
 					}
 					img {
-						height: 50px;
+						height: 200px;
 					}
 				`}</style>
 			</div>
 		);
 	}
 
+	renderError() {
+		return (
+			<div>
+				<div>Sorry, an error ocurred</div>
+			</div>
+		);
+	}
+
+
 	renderResources() {
-		const { res } = this.state;
+		const { error, res } = this.state;
+
+		if (error) {
+			console.log(error);
+			return this.renderError();
+		}
+
+		if (res === null){
+			return this.renderError();
+		}
 
 		return (
 			<div className="holder">
@@ -87,5 +106,3 @@ export class ResLoader extends Component {
 		);
 	}
 }
-
-export default ResLoader;

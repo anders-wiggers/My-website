@@ -8,7 +8,7 @@ export class ResItem extends Component {
 
 	render() {
 		return (
-			<Link href="/resources">
+			<Link href={`/resources?title=${this.props.name}`}>
 				<div className="box">
 					<div className="inner">
 						<h3>{this.props.name}</h3>
