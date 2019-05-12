@@ -83,6 +83,9 @@ export default class ResPage extends Component {
 		return (
 			<div className="xs">
         <h1>{content.resourceName}</h1>
+        <h3>{content.resourceDescription}</h3>
+        <p>{content.resourceDescription}</p>
+
 				<style jsx>{`
 					.xs {
 						height:20px;
@@ -92,10 +95,85 @@ export default class ResPage extends Component {
 		);
 	}
 
+
+	renderFromBlock(){
+		const data = {
+			"time" : 1557690088396,
+			"blocks" : [
+				{
+					"type" : "header",
+					"data" : {
+						"text" : "Editor.js",
+						"level" : 2
+					}
+				},
+				{
+					"type" : "paragraph",
+					"data" : {
+						"text" : "Hey. Meet the new Editor. On this page you can see it in action — try to edit this text."
+					}
+				},
+				{
+					"type" : "header",
+					"data" : {
+						"text" : "Key features",
+						"level" : 3
+					}
+				},
+				{
+					"type" : "list",
+					"data" : {
+						"style" : "unordered",
+						"items" : [
+							"It is a block-styled editor",
+							"It returns clean data output in JSON",
+							"Designed to be extendable and pluggable with a simple API"
+						]
+					}
+				}
+			],
+			"version" : "2.12.4"
+		}
+
+		
+		let blocks = data.blocks
+
+		let html = []
+
+
+
+		blocks.forEach((block) =>{
+			console.log(block)
+			switch(block.type){
+				case "header":
+					html.push(<this.CustomTag>{block.data.text}</this.CustomTag>)
+					break;
+				case "paragraph":
+					html.push(<p>{block.data.text}</p>)
+					break;
+				case "list":
+					html.push(
+						<ul>
+							{block.data.items.map((item) => <li>{item}</li>)}
+						</ul>
+					)
+			}
+
+		})
+
+		return (html)
+
+	}
+
+
+	CustomTag (hPoperty){ 
+		return `h${hPoperty}`
+	}
+
 	render() {
 		return (
 			<div>
-				<div className="res">{this.state.loading ? this.renderLoading() : this.renderResources()}</div>
+				<div className="res">{this.state.loading ? this.renderLoading() : this.renderFromBlock()}</div>
 				<style jsx>{`
 					.res {
 						table-layout: fixed;
