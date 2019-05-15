@@ -94,67 +94,38 @@ export default class ResPage extends Component {
 	}
 
 	renderFromBlock() {
-		const data = {
-			time: 1557690088396,
-			blocks: [
-				{
-					type: 'header',
-					data: {
-						text: 'Editor.js',
-						level: 2
-					}
-				},
-				{
-					type: 'paragraph',
-					data: {
-						text: 'Hey. Meet the new Editor. On this page you can see it in action — try to edit this text.'
-					}
-				},
-				{
-					type: 'header',
-					data: {
-						text: 'Key features',
-						level: 3
-					}
-				},
-				{
-					type: 'list',
-					data: {
-						style: 'unordered',
-						items: [
-							'It is a block-styled editor',
-							'It returns clean data output in JSON',
-							'Designed to be extendable and pluggable with a simple API'
-						]
-					}
-				}
-			],
-			version: '2.12.4'
-		};
-
-		let blocks = data.blocks;
+		let blocks = this.state.content.content.blocks;
 
 		let html = [];
 
 		blocks.forEach((block) => {
-			console.log(block);
 			switch (block.type) {
 				case 'header':
-					html.push(<h1>{block.data.text}</h1>);
+					let elem = React.createElement(`h${block.data.level}`, null, block.data.text);
+
+					html.push(elem);
 					break;
 				case 'paragraph':
-					html.push(<p>{block.data.text}</p>);
+					let a = {
+						__html: block.data.text
+					};
+					html.push(<div dangerouslySetInnerHTML={a} className="paragraph beauty" />);
 					break;
 				case 'list':
-					html.push(<ul>{block.data.items.map((item) => <li>{item}</li>)}</ul>);
+					html.push(
+						<ul className="list">{block.data.items.map((item) => <li className="beauty">{item}</li>)}</ul>
+					);
+					break;
+				case 'delimiter':
+					html.push(<div className="delimiter beauty">* * *</div>);
+					break;
+				case 'image':
+					html.push(<img className="" src={block.data.file.url} />);
+					break;
 			}
 		});
 
 		return html;
-	}
-
-	CustomTag(hPoperty) {
-		return `h${hPoperty}`;
 	}
 
 	render() {
@@ -164,16 +135,6 @@ export default class ResPage extends Component {
 					<div className="res">{this.state.loading ? this.renderLoading() : this.renderFromBlock()}</div>
 				</div>
 				<style jsx>{`
-					h1 {
-						font-family: Lucida Grande, Lucida Sans Unicode, Lucida Sans;
-						letter-spacing: -.03em;
-						padding: 1em 0;
-						margin: 0;
-						margin-bottom: -0.9em;
-						line-height: 1.5em;
-						outline: none;
-						font-size: 1em;
-					}
 					.outer {
 						margin: 50px 0 50px 0;
 						background-color: aliceblue;
@@ -203,6 +164,53 @@ export default class ResPage extends Component {
 						line-height: 1.5em;
 						outline: none;
 						font-size: 2em;
+					}
+					h2 {
+						font-family: Lucida Grande, Lucida Sans Unicode, Lucida Sans;
+						letter-spacing: -.03em;
+						padding: 1em 0;
+						margin: 0;
+						margin-bottom: -0.9em;
+						line-height: 1em;
+						outline: none;
+						font-size: 1.5em;
+					}
+					h3 {
+						font-family: Lucida Grande, Lucida Sans Unicode, Lucida Sans;
+						letter-spacing: -.03em;
+						padding: 1em 0;
+						margin: 0;
+						margin-bottom: -0.9em;
+						line-height: 0.5em;
+						outline: none;
+						font-size: 1.17em;
+					}
+					.list {
+						margin-top: 1rem;
+					}
+					.delimiter {
+						margin: 20px;
+						text-align: center;
+						font-size: 1.5em;
+					}
+					.paragraph {
+						padding: .7em 0;
+						line-height: 1.6em;
+					}
+
+					.beauty {
+						letter-spacing: .005em;
+						color: #313649;
+						-webkit-font-smoothing: antialiased;
+					}
+					code {
+						background: rgba(251, 241, 241, 0.78);
+						color: #c44545;
+						padding: 4px 6px;
+						border-radius: 2px;
+						margin: 0 2px;
+						font-family: Menlo, Monaco, Consolas, Courier New, monospace;
+						font-size: 0.9em;
 					}
 				`}</style>
 			</div>
