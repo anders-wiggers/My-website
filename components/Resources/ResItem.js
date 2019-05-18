@@ -4,11 +4,19 @@ import Link from 'next/link';
 export class ResItem extends Component {
 	constructor(props) {
 		super(props);
+		this.state = {
+			link: `/resources?title=${this.props.name}`
+		};
+		if (this.props.link != null) {
+			this.state = {
+				link: `/${this.props.link}`
+			};
+		}
 	}
 
 	render() {
 		return (
-			<Link href={`/resources?title=${this.props.name}`}>
+			<Link href={this.state.link}>
 				<div className="box">
 					<div className="inner">
 						<h3>{this.props.name}</h3>

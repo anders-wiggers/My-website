@@ -155,6 +155,9 @@ export default class ResPage extends Component {
 					}
 				`}</style>
 				<style jsx global>{`
+					img {
+						width: 100%;
+					}
 					h1 {
 						font-family: Lucida Grande, Lucida Sans Unicode, Lucida Sans;
 						letter-spacing: -.03em;
