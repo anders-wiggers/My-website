@@ -14,10 +14,18 @@ export default class ResLoader extends React.Component {
 	}
 
 	componentDidMount() {
+		this.fetch();
+	}
+
+	fetch() {
 		axios
 			.get(window.encodeURI(`http://localhost:3001/api/res`))
 			.then((response) => {
 				const res = response.data;
+				if (res === null) {
+					this.fetch();
+					return;
+				}
 				this.setState({
 					res,
 					loading: false
@@ -34,7 +42,7 @@ export default class ResLoader extends React.Component {
 	renderLoading() {
 		return (
 			<div className="loader">
-		        <img src="https://yalantis.com/uploads/ckeditor/pictures/365/content_Loading-Loop-1.gif"></img>
+				<img src="https://yalantis.com/uploads/ckeditor/pictures/365/content_Loading-Loop-1.gif" />
 				<style jsx>{`
 					.loader {
 						text-align: center;
@@ -57,7 +65,6 @@ export default class ResLoader extends React.Component {
 		);
 	}
 
-
 	renderResources() {
 		const { error, res } = this.state;
 
@@ -66,13 +73,11 @@ export default class ResLoader extends React.Component {
 			return this.renderError();
 		}
 
-		if (res === null){
-			return this.renderError();
-		}
-
 		return (
 			<div className="holder">
-				{res.map((ress) => <ResItem name={ress.resourceName} disc={ress.resourceDescription} link={ress.link} />)}
+				{res.map((ress) => (
+					<ResItem name={ress.resourceName} disc={ress.resourceDescription} link={ress.link} />
+				))}
 
 				<style jsx>{`
 					.holder {

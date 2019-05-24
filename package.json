@@ -42,6 +42,7 @@
     "react-fluid-container": "^0.6.0",
     "react-measure": "^2.2.5",
     "react-motion": "^0.5.2",
+    "react-no-ssr": "^1.1.0",
     "react-scripts": "^2.1.8",
     "react-scroll": "^1.7.11",
     "react-typed": "^1.1.2"

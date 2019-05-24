@@ -5,7 +5,7 @@ import './dummy.css';
 class Footer extends Component {
 	render() {
 		return (
-			<footer class="page-footer font-small cyan darken-3">
+			<footer className="page-footer font-small cyan darken-3">
 				<div className="footer">Thank you for visiting my portfolio</div>
 				<style jsx global>{`
 					.footer {
@@ -25,7 +25,7 @@ class Footer extends Component {
 							<div className="col-sm">
 								<a href="https://github.com/anders-wiggers" target="_blank">
 									<span className="fa fa-github fitme" />
-									<a>Github</a>
+									Github
 								</a>
 							</div>
 							<div className="col-sm">

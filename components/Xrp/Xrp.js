@@ -81,7 +81,7 @@ export default class Xrp extends React.Component {
 	renderLoading() {
 		return (
 			<div className="loader">
-				<img src="https://media1.tenor.com/images/893ee126100411e582efc88f6a63996c/tenor.gif" />
+				<img src="https://yalantis.com/uploads/ckeditor/pictures/365/content_Loading-Loop-1.gif" />
 				<style jsx>{`
 					.loader {
 						text-align: center;
@@ -89,7 +89,7 @@ export default class Xrp extends React.Component {
 						line-height: 70vh;
 					}
 					img {
-						height: 50px;
+						height: 200px;
 					}
 				`}</style>
 			</div>
@@ -105,11 +105,47 @@ export default class Xrp extends React.Component {
 					XRP is at: <span className={this.state.currentClass + ' boxed'}>{xrp.last}</span>
 				</h1>
 				<div>
-					<h4>Current Result: {xrp.last * 1934.55 * 7.47 - 870 * 7.47}</h4>
-					<h4>GOGOG:</h4>
+					<table className="table table-striped">
+						<thead>
+							<tr>
+								<td />
+								<th scope="col">Profit</th>
+								<th scope="col">Total</th>
+							</tr>
+						</thead>
+						<tr>
+							<th scope="row">Current Result: </th>
+							<td>{(xrp.last * 1934.55 * 7.47 - 870 * 7.47).toFixed(2)}</td>
+							<td>{(xrp.last * 1934.55 * 7.47).toFixed(2)}</td>
+						</tr>
+
+						<tr>
+							<th scope="row">First Buy:</th>
+							<td>{((xrp.last * 661.3 - 661.3 * 0.5) * 7.47).toFixed(2)}</td>
+							<td>{(xrp.last * 661.3 * 7.47).toFixed(2)}</td>
+						</tr>
+						<tr>
+							<th scope="row">Secound Buy:</th>
+							<td>{((xrp.last * 999 - 999 * 0.39) * 7.47).toFixed(2)}</td>
+							<td>{(xrp.last * 999 * 7.47).toFixed(2)}</td>
+						</tr>
+						<tr>
+							<th scope="row">GF Stats:</th>
+							<td>{((xrp.last * 274 - 274 * 0.5) * 7.47).toFixed(2)}</td>
+							<td>{(xrp.last * 274 * 7.47).toFixed(2)}</td>
+						</tr>
+					</table>
 				</div>
 
 				<style jsx>{`
+					.islow {
+						background-color: #f8d7da;
+					}
+
+					.ishigh {
+						background-color: #d4edda;
+					}
+
 					.boxed {
 						padding: 10px;
 						border-radius: 10px;

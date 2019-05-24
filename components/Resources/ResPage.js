@@ -66,33 +66,6 @@ export default class ResPage extends Component {
 		);
 	}
 
-	renderResources() {
-		const { error, content } = this.state;
-
-		if (error) {
-			console.log(error);
-			return this.renderError();
-		}
-
-		if (content === null) {
-			return this.renderError();
-		}
-
-		return (
-			<div className="xs">
-				<h1>{content.resourceName}</h1>
-				<h3>{content.resourceDescription}</h3>
-				<p>{content.resourceDescription}</p>
-
-				<style jsx>{`
-					.xs {
-						height: 20px;
-					}
-				`}</style>
-			</div>
-		);
-	}
-
 	renderFromBlock() {
 		let blocks = this.state.content.content.blocks;
 
@@ -113,15 +86,21 @@ export default class ResPage extends Component {
 					break;
 				case 'list':
 					html.push(
-						<ul className="list">{block.data.items.map((item) => <li className="beauty">{item}</li>)}</ul>
+						<ul className="list">
+							{block.data.items.map((item) => (
+								<li dangerouslySetInnerHTML={{ __html: item }} className="beauty" />
+							))}
+						</ul>
 					);
 					break;
 				case 'delimiter':
 					html.push(<div className="delimiter beauty">* * *</div>);
 					break;
 				case 'image':
-					html.push(<img className="" src={block.data.file.url} />);
+					html.push(<img className="img" src={block.data.file.url} />);
 					break;
+				case 'code':
+					html.push(<div className="codeWindow" dangerouslySetInnerHTML={{ __html: block.data.code }} />);
 			}
 		});
 
@@ -155,7 +134,7 @@ export default class ResPage extends Component {
 					}
 				`}</style>
 				<style jsx global>{`
-					img {
+					.img {
 						width: 100%;
 					}
 					h1 {
@@ -214,6 +193,20 @@ export default class ResPage extends Component {
 						margin: 0 2px;
 						font-family: Menlo, Monaco, Consolas, Courier New, monospace;
 						font-size: 0.9em;
+					}
+					.codeWindow {
+						padding: 20px;
+						font-family: Menlo, Monaco, Consolas, Courier New, monospace;
+						color: #41314e;
+						line-height: 1.6em;
+						font-size: 12px;
+						background: #f8f7fa;
+						border: 1px solid #f1f1f4;
+						box-shadow: none;
+						white-space: pre;
+						word-wrap: normal;
+						overflow-x: auto;
+						margin: 20px;
 					}
 				`}</style>
 			</div>

@@ -18,12 +18,40 @@ export class ResItem extends Component {
 		return (
 			<Link href={this.state.link}>
 				<div className="box">
+					<div className="fader" />
 					<div className="inner">
 						<h3>{this.props.name}</h3>
 						<p>{this.props.disc}</p>
 					</div>
+
 					<style jsx>{`
+						.fader {
+							position: relative;
+							width: 100%;
+							height: 50px;
+							z-index: 1;
+							/* background-color: blue; */
+							background: -moz-linear-gradient(
+								top,
+								rgba(255, 255, 255, 0) 0%,
+								rgba(95, 196, 221, 1) 100%
+							);
+							background: -webkit-linear-gradient(
+								top,
+								rgba(255, 255, 255, 0) 0%,
+								rgba(95, 196, 221, 1) 100%
+							);
+							background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgb(0, 175, 224) 100%);
+							filter: progid:DXImageTransform.Microsoft.gradient(
+									startColorstr='#00ffffff',
+									endColorstr='#5fc4dd',
+									GradientType=0
+								);
+							margin-bottom: -200px;
+							margin-top: 140px;
+						}
 						.box {
+							overflow: hidden;
 							width: 250px;
 							height: 200px;
 							background: #5fc4dd;
