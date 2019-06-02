@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import Link from 'next/link';
 
 export default class Xrp extends React.Component {
 	constructor(props) {
@@ -135,9 +136,17 @@ export default class Xrp extends React.Component {
 							<td>{(xrp.last * 274 * 7.47).toFixed(2)}</td>
 						</tr>
 					</table>
+					<div className="center">
+						<Link href="/howsxrp/custom">
+							<div className="flat-button">Create your own</div>
+						</Link>
+					</div>
 				</div>
 
 				<style jsx>{`
+					.center {
+						text-align: center;
+					}
 					.islow {
 						background-color: #f8d7da;
 					}
@@ -227,6 +236,45 @@ export default class Xrp extends React.Component {
 						100% {
 							background-color: transparent;
 						}
+					}
+					button {
+						padding: 20px;
+						margin-bottom: 50px;
+					}
+
+					.flat-button {
+						border-radius: 3px;
+						position: relative;
+						width: 250px;
+						height: 60px;
+						background: #5fc4dd;
+						margin: 0 auto;
+						margin-top: 40px;
+						overflow: hidden;
+						z-index: 1;
+						cursor: pointer;
+						transition: color .3s;
+						/* Typo */
+						line-height: 60px;
+						text-align: center;
+						color: #fff;
+					}
+
+					.flat-button:after {
+						position: absolute;
+						top: 90%;
+						left: 0;
+						width: 100%;
+						height: 100%;
+						background: #31a8c5;
+						content: "";
+						z-index: -2;
+						transition: transform .3s;
+					}
+
+					.flat-button:hover::after {
+						transform: translateY(-80%);
+						transition: transform .3s;
 					}
 				`}</style>
 			</div>
