@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import XRPItem from '../Xrp/CreatorItem';
 import TextField from '@material-ui/core/TextField';
 import Link from 'next/link';
+import axios from 'axios';
 
 export class Creator extends Component {
 	constructor(props) {
@@ -24,13 +25,12 @@ export class Creator extends Component {
 			xrps: xrps
 		};
 
+		axios.post('http://localhost:3001/api/xrptrack', result);
+
 		this.setState({
 			siteId: id,
 			finished: true
 		});
-
-		result = JSON.parse(JSON.stringify(result));
-		console.log(result);
 	};
 
 	add = () => {
@@ -68,17 +68,58 @@ export class Creator extends Component {
 	renderCreater() {
 		return (
 			<div>
-				{this.state.numberOfInputs.map((who) => <XRPItem weChangeState={this.updateStates} iam={who} />)}
+				<div className="holder">
+					<div>
+						<p>
+							To create your custom XRP tracer enter an ID, then the amount bought, followed by the price
+							of XRP at the purchase time, lastly enter the currency purchased with.
+						</p>
+					</div>
+					{this.state.numberOfInputs.map((who) => <XRPItem weChangeState={this.updateStates} iam={who} />)}
 
-				<div onClick={this.add}>Add another buy</div>
-
-				<div onClick={this.remove}>Remove a buy</div>
+					<div className="buttondiv">
+						<div className="adder left">
+							<div onClick={this.add}>Add another buy</div>
+						</div>
+						<div className="adder right">
+							<div onClick={this.remove}>Remove a buy</div>
+						</div>
+					</div>
+				</div>
 
 				<div onClick={this.printArray} className="flat-button">
 					Create Tracker
 				</div>
 
 				<style jsx>{`
+					.left {
+						float: left;
+					}
+					.right {
+						float: right;
+					}
+					.buttondiv {
+						margin: 0 auto;
+						width: 420px;
+					}
+					.adder {
+						margin-top: 20px;
+						background-color: #505b5f;
+						text-align: center;
+						width: 200px;
+						color: #f4f4f4;
+						padding: 10px;
+						border-radius: 40px;
+						cursor: pointer;
+					}
+					.holder {
+						margin: 40px;
+						background-color: #f7f7f7;
+						padding: 30px;
+						border-radius: 30px;
+						text-align: center;
+						padding-bottom: 50px;
+					}
 					button {
 						padding: 20px;
 						margin-bottom: 50px;
@@ -100,7 +141,7 @@ export class Creator extends Component {
 						height: 60px;
 						background: #5fc4dd;
 						margin: 0 auto;
-						margin-top: 40px;
+						margin-top: 80px;
 						overflow: hidden;
 						z-index: 1;
 						cursor: pointer;
@@ -138,7 +179,7 @@ export class Creator extends Component {
 
 				<div className="littlepad"> Your Tracker is created copy and save the link to return again:</div>
 
-				<div className="linkbox">http://localhost:3000/howsxrp?custom={this.state.siteId}</div>
+				<div className="linkbox">{'http://localhost:3000/howsxrp?custom=' + this.state.siteId}</div>
 				<Link href={'/howsxrp?custom=' + this.state.siteId}>
 					<div className="flat-button">Continue</div>
 				</Link>
@@ -151,7 +192,6 @@ export class Creator extends Component {
 						font-size: 1.4em;
 						background-color: #f1f1f1;
 						width: 60%;
-						height: 75px;
 						line-height: 75px;
 						margin: 0 auto;
 						margin-top: 10px;

@@ -19,17 +19,24 @@ export default class CreatorItem extends Component {
 		this.state = {
 			currency: 'USD',
 			id: '',
-			amount: 0,
-			price: 0,
+			amount: '',
+			price: '',
 			iam: this.props.iam
 		};
+
+		this.handleChange = this.handleChange.bind(this);
+		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
 	handleChange = (name) => (event) => {
-		this.setState({
-			[name]: event.target.value
-		});
-		this.props.weChangeState(this.state);
+		this.setState(
+			{
+				[name]: event.target.value
+			},
+			() => {
+				this.props.weChangeState(this.state);
+			}
+		);
 	};
 
 	render() {
@@ -42,6 +49,7 @@ export default class CreatorItem extends Component {
 					placeholder="First Buy"
 					margin="normal"
 					className="spaceing"
+					value={this.state.id}
 					onChange={this.handleChange('id')}
 				/>
 
@@ -51,7 +59,8 @@ export default class CreatorItem extends Component {
 					label="Buy Amount"
 					placeholder="1000"
 					margin="normal"
-					onchange={this.handleChange('amount')}
+					value={this.state.amount}
+					onChange={this.handleChange('amount')}
 				/>
 
 				<TextField
@@ -60,6 +69,7 @@ export default class CreatorItem extends Component {
 					label="XRP price"
 					placeholder="0.34"
 					margin="normal"
+					value={this.state.price}
 					onChange={this.handleChange('price')}
 				/>
 
@@ -69,6 +79,7 @@ export default class CreatorItem extends Component {
 					label="Select"
 					value={this.state.currency}
 					className="currency"
+					value={this.state.currency}
 					onChange={this.handleChange('currency')}
 					SelectProps={{
 						MenuProps: {}
