@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Loading from '../Loading';
+import getConfig from 'next/config';
+const { serverRuntimeConfig, publicRuntimeConfig } = getConfig();
 
 const Chart = ({ chart, cxrp }) => (
 	<tr>
@@ -34,7 +36,7 @@ export default class XrpCustom extends Component {
 	componentDidMount() {
 		this.fetchData();
 		axios
-			.get(window.encodeURI(`http://localhost:3001/api/xrptrack?id=${this.props.lewd}`))
+			.get(window.encodeURI(`${publicRuntimeConfig.localApi}/api/xrptrack?id=${this.props.lewd}`))
 			.then((response) => {
 				const content = response.data;
 				this.setState({

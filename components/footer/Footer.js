@@ -7,18 +7,6 @@ class Footer extends Component {
 		return (
 			<footer className="page-footer font-small cyan darken-3">
 				<div className="footer">Thank you for visiting my portfolio</div>
-				<style jsx global>{`
-					.footer {
-						min-height: 200px;
-						background-color: #212529;
-						text-align: center;
-						color: white;
-						vertical-align: middle;
-						line-Height: 200px;
-						text-transform: uppercase;
-						font-weight: 150;
-					}
-				`}</style>
 				<div className="footerCon">
 					<div className="container">
 						<div className="row">
@@ -48,6 +36,16 @@ class Footer extends Component {
 					</div>
 				</div>
 				<style jsx>{`
+					.footer {
+						min-height: 200px;
+						background-color: #212529;
+						text-align: center;
+						color: white;
+						vertical-align: middle;
+						line-Height: 200px;
+						text-transform: uppercase;
+						font-weight: 300;
+					}
 					.menu {
 						height: 50px;
 						background-color: #333;

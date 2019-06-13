@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import getConfig from 'next/config';
+const { serverRuntimeConfig, publicRuntimeConfig } = getConfig();
 
 export default class ResPage extends Component {
 	constructor(props) {
@@ -14,7 +16,7 @@ export default class ResPage extends Component {
 
 	componentDidMount() {
 		axios
-			.get(window.encodeURI(`http://localhost:3001/api/res?name=${this.props.title}`))
+			.get(window.encodeURI(`${publicRuntimeConfig.localApi}/api/res?name=${this.props.title}`))
 			.then((response) => {
 				const content = response.data;
 				this.setState({

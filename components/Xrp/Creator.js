@@ -3,35 +3,54 @@ import XRPItem from '../Xrp/CreatorItem';
 import TextField from '@material-ui/core/TextField';
 import Link from 'next/link';
 import axios from 'axios';
+import ReCAPTCHA from 'react-google-recaptcha';
+import Snackbar from '@material-ui/core/Snackbar';
+
+import getConfig from 'next/config';
+const { serverRuntimeConfig, publicRuntimeConfig } = getConfig();
 
 export class Creator extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			numberOfInputs: [ 0 ],
-			finished: false
+			finished: false,
+			notRobot: false,
+			isSnackOpen: false
 		};
+		this.handleCloseSnack = this.handleCloseSnack.bind(this);
+		this.handleCaptcha = this.handleCaptcha.bind(this);
 	}
 
 	printArray = () => {
-		console.clear();
-		let id = this.makeid(10);
-		let xrps = this.state;
-		delete xrps['numberOfInputs'];
-		delete xrps['finished'];
+		if (this.state.notRobot) {
+			console.clear();
+			let id = this.makeid(10);
+			let xrps = this.state;
+			delete xrps['numberOfInputs'];
+			delete xrps['finished'];
+			delete xrps['notRobot'];
+			delete xrps['isSnackOpen'];
 
-		let result = {
-			id: id,
-			xrps: xrps
-		};
+			let result = {
+				id: id,
+				xrps: xrps
+			};
 
-		axios.post('http://localhost:3001/api/xrptrack', result);
+			axios.post(publicRuntimeConfig.localApi + '/api/xrptrack', result);
 
-		this.setState({
-			siteId: id,
-			finished: true
-		});
+			this.setState({
+				siteId: id,
+				finished: true
+			});
+		} else {
+			this.setState({ isSnackOpen: true });
+		}
 	};
+
+	handleCloseSnack() {
+		this.setState({ isSnackOpen: false });
+	}
 
 	add = () => {
 		this.setState((state) => {
@@ -65,6 +84,12 @@ export class Creator extends Component {
 		return result;
 	}
 
+	handleCaptcha(value) {
+		this.setState({
+			notRobot: true
+		});
+	}
+
 	renderCreater() {
 		return (
 			<div>
@@ -75,7 +100,9 @@ export class Creator extends Component {
 							of XRP at the purchase time, lastly enter the currency purchased with.
 						</p>
 					</div>
-					{this.state.numberOfInputs.map((who) => <XRPItem weChangeState={this.updateStates} iam={who} />)}
+					{this.state.numberOfInputs.map((who) => (
+						<XRPItem weChangeState={this.updateStates} key={who} iam={who} />
+					))}
 
 					<div className="buttondiv">
 						<div className="adder left">
@@ -86,12 +113,33 @@ export class Creator extends Component {
 						</div>
 					</div>
 				</div>
-
+				<div className="captcha">
+					<ReCAPTCHA sitekey="6LddwqgUAAAAAHhunVzMtBufLIIDWdHsbc-EmcEu" onChange={this.handleCaptcha} />
+				</div>
 				<div onClick={this.printArray} className="flat-button">
 					Create Tracker
 				</div>
+				<Snackbar
+					className="noRobots"
+					key={`bottom,center`}
+					open={this.state.isSnackOpen}
+					onClose={this.handleCloseSnack}
+					autoHideDuration={5000}
+					ContentProps={{
+						'aria-describedby': 'message-id'
+					}}
+					message={<span id="message-id">Please prove to me that you, in fact, are not a robot 🤖</span>}
+				/>
 
 				<style jsx>{`
+					.noRobots {
+						background-color: red;
+					}
+					.captcha {
+						margin: 0 auto;
+						width: 304px;
+						margin-top: 100px;
+					}
 					.left {
 						float: left;
 					}
@@ -141,7 +189,8 @@ export class Creator extends Component {
 						height: 60px;
 						background: #5fc4dd;
 						margin: 0 auto;
-						margin-top: 80px;
+						margin-top: 20px;
+						margin-bottom: 50px;
 						overflow: hidden;
 						z-index: 1;
 						cursor: pointer;
@@ -179,7 +228,7 @@ export class Creator extends Component {
 
 				<div className="littlepad"> Your Tracker is created copy and save the link to return again:</div>
 
-				<div className="linkbox">{'http://localhost:3000/howsxrp?custom=' + this.state.siteId}</div>
+				<div className="linkbox">{`${publicRuntimeConfig.thisSite}/howsxrp?custom=` + this.state.siteId}</div>
 				<Link href={'/howsxrp?custom=' + this.state.siteId}>
 					<div className="flat-button">Continue</div>
 				</Link>

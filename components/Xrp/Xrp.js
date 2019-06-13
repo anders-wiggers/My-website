@@ -19,7 +19,7 @@ export default class Xrp extends React.Component {
 	componentDidMount() {
 		this.fetchData();
 		this.intervalID = setInterval(() => {
-			console.log('fetching');
+			//console.log('fetching');
 			this.setState({
 				currentClass: ''
 			});
@@ -63,7 +63,7 @@ export default class Xrp extends React.Component {
 	}
 
 	fetchData() {
-		console.log('fetching');
+		//console.log('fetching');
 		axios
 			.get(window.encodeURI(`https://www.bitstamp.net/api/v2/ticker/xrpeur/`))
 			.then((response) => {
@@ -114,27 +114,29 @@ export default class Xrp extends React.Component {
 								<th scope="col">Total</th>
 							</tr>
 						</thead>
-						<tr>
-							<th scope="row">Current Result: </th>
-							<td>{(xrp.last * 1934.55 * 7.47 - 870 * 7.47).toFixed(2)}</td>
-							<td>{(xrp.last * 1934.55 * 7.47).toFixed(2)}</td>
-						</tr>
+						<tbody>
+							<tr>
+								<th scope="row">Current Result: </th>
+								<td>{(xrp.last * 1934.55 * 7.47 - 870 * 7.47).toFixed(2)}</td>
+								<td>{(xrp.last * 1934.55 * 7.47).toFixed(2)}</td>
+							</tr>
 
-						<tr>
-							<th scope="row">First Buy:</th>
-							<td>{((xrp.last * 661.3 - 661.3 * 0.5) * 7.47).toFixed(2)}</td>
-							<td>{(xrp.last * 661.3 * 7.47).toFixed(2)}</td>
-						</tr>
-						<tr>
-							<th scope="row">Secound Buy:</th>
-							<td>{((xrp.last * 999 - 999 * 0.39) * 7.47).toFixed(2)}</td>
-							<td>{(xrp.last * 999 * 7.47).toFixed(2)}</td>
-						</tr>
-						<tr>
-							<th scope="row">GF Stats:</th>
-							<td>{((xrp.last * 274 - 274 * 0.5) * 7.47).toFixed(2)}</td>
-							<td>{(xrp.last * 274 * 7.47).toFixed(2)}</td>
-						</tr>
+							<tr>
+								<th scope="row">First Buy:</th>
+								<td>{((xrp.last * 661.3 - 661.3 * 0.5) * 7.47).toFixed(2)}</td>
+								<td>{(xrp.last * 661.3 * 7.47).toFixed(2)}</td>
+							</tr>
+							<tr>
+								<th scope="row">Secound Buy:</th>
+								<td>{((xrp.last * 999 - 999 * 0.39) * 7.47).toFixed(2)}</td>
+								<td>{(xrp.last * 999 * 7.47).toFixed(2)}</td>
+							</tr>
+							<tr>
+								<th scope="row">GF Stats:</th>
+								<td>{((xrp.last * 274 - 274 * 0.5) * 7.47).toFixed(2)}</td>
+								<td>{(xrp.last * 274 * 7.47).toFixed(2)}</td>
+							</tr>
+						</tbody>
 					</table>
 					<div className="center">
 						<Link href="/howsxrp/custom">

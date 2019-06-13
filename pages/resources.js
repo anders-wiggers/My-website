@@ -2,53 +2,47 @@ import Layout from '../components/Layout/Layout.js';
 import ResLoader from '../components/Resources/ResLoader';
 import ResPage from '../components/Resources/ResPage';
 
-import { withRouter } from 'next/router'
+import { withRouter } from 'next/router';
 import React, { Component } from 'react';
 
-
-
 class Resources extends Component {
-    constructor(props){
-        super(props)
-    }
-		
-renderDefault(){
-	return(
-		<Layout title="Resources" menu="res">
-		<div>
-			<h1>Resources</h1>
-			<ResLoader />
-		</div>
-	</Layout>
-	)
-}
+	constructor(props) {
+		super(props);
+	}
 
-renderQuery(){
-    const { router } = this.props
+	renderDefault() {
+		return (
+			<Layout title="Resources" menu="res">
+				<div>
+					<h1>Resources</h1>
+					<ResLoader />
+				</div>
+			</Layout>
+		);
+	}
 
-	return(
-		<Layout title={`Resources: ${router.query.title}`} menu="res">
-		<ResPage title={router.query.title}></ResPage>
-	</Layout>
-	)
-}
+	renderQuery() {
+		const { router } = this.props;
 
-  render() {
-		const { router } = this.props
-		console.log(router.query)
+		return (
+			<Layout title={`Resources: ${router.query.title}`} menu="res">
+				<ResPage title={router.query.title} />
+			</Layout>
+		);
+	}
+
+	render() {
+		const { router } = this.props;
+		//console.log(router.query)
 
 		let isQuery = false;
-		if(!router.query.title){
-			isQuery = true
+		if (!router.query.title) {
+			isQuery = true;
 		}
 
-		console.log(isQuery)
-    return (
-      isQuery ? this.renderDefault() : this.renderQuery()
-    )
-  }
+		//console.log(isQuery)
+		return isQuery ? this.renderDefault() : this.renderQuery();
+	}
 }
 
-
-export default withRouter(Resources)
-
+export default withRouter(Resources);

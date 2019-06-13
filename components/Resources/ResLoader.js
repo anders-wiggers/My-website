@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import ResItem from './ResItem';
 import axios from 'axios';
+import getConfig from 'next/config';
+const { serverRuntimeConfig, publicRuntimeConfig } = getConfig();
 
 export default class ResLoader extends React.Component {
 	constructor(props) {
 		super(props);
-
 		this.state = {
 			res: [],
 			loading: true,
@@ -19,7 +20,7 @@ export default class ResLoader extends React.Component {
 
 	fetch() {
 		axios
-			.get(window.encodeURI(`http://localhost:3001/api/res`))
+			.get(window.encodeURI(`${publicRuntimeConfig.localApi}/api/res`))
 			.then((response) => {
 				const res = response.data;
 				if (res === null) {
@@ -69,14 +70,19 @@ export default class ResLoader extends React.Component {
 		const { error, res } = this.state;
 
 		if (error) {
-			console.log(error);
+			//console.log(error);
 			return this.renderError();
 		}
 
 		return (
 			<div className="holder">
 				{res.map((ress) => (
-					<ResItem name={ress.resourceName} disc={ress.resourceDescription} link={ress.link} />
+					<ResItem
+						name={ress.resourceName}
+						key={ress.resourceName}
+						disc={ress.resourceDescription}
+						link={ress.link}
+					/>
 				))}
 
 				<style jsx>{`

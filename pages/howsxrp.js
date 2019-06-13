@@ -32,14 +32,14 @@ export class howsxrp extends Component {
 
 	render() {
 		const { router } = this.props;
-		console.log(router.query);
+		//console.log(router.query);
 
 		let isQuery = false;
 		if (!router.query.custom) {
 			isQuery = true;
 		}
 
-		console.log(isQuery);
+		//console.log(isQuery);
 		return isQuery ? this.renderDefault() : this.renderQuery();
 	}
 }

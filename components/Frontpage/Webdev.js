@@ -78,6 +78,7 @@ class Webdev extends Component {
 							position: relative;
 							margin-left: -50vw;
 							left: 50%;
+							padding-bottom: 80px;
 						}
 						.padding {
 							padding-top: 80px;

@@ -101,7 +101,7 @@ class AppdevTab extends Component {
 							programming patterns as possible.
 						</p>
 						<p className="gitlink">
-							<a href="url">
+							<a href="https://github.com/anders-wiggers/Primite">
 								<i className="fab fa-github" /> Primite
 							</a>
 						</p>
