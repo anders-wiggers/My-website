@@ -225,6 +225,9 @@ class Appdev extends Component {
 							margin: 0 auto;
 							font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 							border-radius: 50px;
+							-webkit-border-radius: 50px;
+							-moz-border-radius: 50px;
+							-webkit-mask-image: -webkit-radial-gradient(white, black);
 						}
 						.firstText {
 							line-height: 0;

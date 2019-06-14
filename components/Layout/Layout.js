@@ -6,6 +6,7 @@ const Layout = (props) => (
 	<div style={body}>
 		<Head>
 			<title>{props.title}</title>
+			<link rel="icon" type="image/x-icon" href="/static/images/aw.png" />
 			<link
 				rel="stylesheet"
 				href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -39,7 +40,7 @@ const body = {
 		'-apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", "Fira Sans", Avenir, "Helvetica Neue", "Lucida Grande", sans-serif',
 	height: '100vh',
 	textAlign: 'left',
-	webkitFontSmoothing: 'antialiased'
+	WebkitFontSmoothing: 'antialiased'
 };
 
 const defualtPadding = {

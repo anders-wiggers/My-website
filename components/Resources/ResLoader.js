@@ -61,7 +61,15 @@ export default class ResLoader extends React.Component {
 	renderError() {
 		return (
 			<div>
-				<div>Sorry, an error ocurred</div>
+				<div className="dbDown">
+					Sorry, an error ocurred. The database might be temporarily down. I'm right on it 💻
+				</div>
+				<style jsx>{`
+					.dbDown {
+						text-align: center;
+						line-height: 70vh;
+					}
+				`}</style>
 			</div>
 		);
 	}
