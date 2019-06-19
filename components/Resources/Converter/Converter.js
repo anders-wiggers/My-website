@@ -223,6 +223,15 @@ export class Converter extends Component {
 						margin: 0 auto;
 						width: 408px;
 					}
+					@media screen and (max-width: 600px) {
+						.box {
+							margin-top: 10vh;
+						}
+						.slider {
+							padding-left: 0px;
+							width: 178px;
+						}
+					}
 				`}</style>
 			</div>
 		);

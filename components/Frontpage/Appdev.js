@@ -257,6 +257,18 @@ class Appdev extends Component {
 							line-height: 3vh;
 							text-align: left;
 						}
+						@media screen and (max-width: 600px) {
+							.phone {
+								display: none;
+							}
+
+							.col-8 {
+								max-width: 100%;
+							}
+							.main {
+								height: auto;
+							}
+						}
 					`}</style>
 				</div>
 			</Element>

@@ -60,6 +60,15 @@ class Entry extends Component {
 						margin-left: -50vw;
 						left: 50%;
 					}
+					@media screen and (max-width: 600px) {
+						#typed {
+							padding-top: 32vh;
+							line-height: 1;
+						}
+						.goto {
+							padding-top: 30vh;
+						}
+					}
 				`}</style>
 			</div>
 		);

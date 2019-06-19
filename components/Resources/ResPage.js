@@ -134,6 +134,12 @@ export default class ResPage extends Component {
 						-webkit-box-shadow: 0px 0px 21px -5px rgba(0, 0, 0, 0.22);
 						-moz-box-shadow: 0px 0px 21px -5px rgba(0, 0, 0, 0.22);
 					}
+					@media screen and (max-width: 600px) {
+						.outer {
+							margin: 0px;
+							padding: 0px;
+						}
+					}
 				`}</style>
 				<style jsx global>{`
 					.img {

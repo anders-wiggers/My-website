@@ -96,6 +96,12 @@ export default class UC extends Component {
 						transform: translateY(-80%);
 						transition: transform .3s;
 					}
+					@media screen and (max-width: 600px) {
+						h3 {
+							font-size: 1em;
+							line-height: 1;
+						}
+					}
 				`}</style>
 			</div>
 		);

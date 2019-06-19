@@ -86,6 +86,16 @@ class Footer extends Component {
 						text-decoration: none;
 						color: #d8d8d8;
 					}
+					@media screen and (max-width: 600px) {
+						.col-sm {
+							width: auto;
+							padding: 0px;
+						}
+						.row {
+							align-items: center;
+							justify-content: center;
+						}
+					}
 				`}</style>
 			</footer>
 		);

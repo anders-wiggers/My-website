@@ -217,6 +217,30 @@ export class Creator extends Component {
 						transform: translateY(-80%);
 						transition: transform .3s;
 					}
+					@media screen and (max-width: 600px) {
+						.captcha {
+							margin-top: 20px;
+						}
+						.adder {
+							width: 150px;
+							margin: 0 auto;
+						}
+						.left {
+							float: none;
+							margin-top: 10px;
+							margin-bottom: 10px;
+						}
+						.right {
+							float: none;
+						}
+						.buttondiv {
+							width: auto;
+						}
+						.holder {
+							margin: 0;
+							padding: 20px 10px 20px 10px;
+						}
+					}
 				`}</style>
 			</div>
 		);

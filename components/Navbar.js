@@ -10,8 +10,14 @@ class Navbar extends Component {
 			pro: 'nav-item',
 			res: 'nav-item',
 			cv: 'nav-item',
-			contact: 'nav-item'
+			contact: 'nav-item',
+			menuOpen: false,
+			menuValue: '☰',
+			navClasses: 'navbar-nav',
+			menuClass: 'mobileHeader',
+			navId: 'gone'
 		};
+		this.showMenu = this.showMenu.bind(this);
 	}
 
 	componentDidMount() {
@@ -47,11 +53,39 @@ class Navbar extends Component {
 		}
 	}
 
+	showMenu() {
+		this.setState(
+			{
+				menuOpen: !this.state.menuOpen
+			},
+			() => {
+				if (this.state.menuOpen) {
+					this.setState({
+						menuValue: '',
+						navClasses: 'navbar-nav visible',
+						menuClass: 'mobileHeader fas fa-times',
+						navId: 'back'
+					});
+				} else {
+					this.setState({
+						menuValue: '☰',
+						navClasses: 'navbar-nav',
+						menuClass: 'mobileHeader',
+						navId: 'gone'
+					});
+				}
+			}
+		);
+	}
+
 	render() {
 		return (
 			<div className="navbar fixed-top navbar-expand-sm bg-light navbar-light" style={page}>
-				<nav className="navbar fixed-top navbar-expand-sm bg-light navbar-light container">
-					<ul className="navbar-nav">
+				<nav
+					id={this.state.navId}
+					className="navbar fixed-top navbar-expand-sm bg-light navbar-light container"
+				>
+					<ul className={this.state.navClasses}>
 						<li className={this.state.aw}>
 							<Link href="/">
 								<a className="nav-link">AW</a>
@@ -84,7 +118,18 @@ class Navbar extends Component {
 						</li>
 					</ul>
 				</nav>
+				<div className={this.state.menuClass} onClick={this.showMenu}>
+					{this.state.menuValue}
+				</div>
 				<style jsx>{`
+					.mobileHeader {
+						display: none;
+						cursor: pointer;
+					}
+
+					.displayed {
+						display: inline;
+					}
 					/* The switch - the box around the slider */
 					.switch {
 						position: relative;
@@ -149,6 +194,36 @@ class Navbar extends Component {
 					}
 					label {
 						margin-bottom: 0;
+					}
+
+					@media screen and (max-width: 600px) {
+						.navbar-nav {
+							transform: translate3d(0px, -256px, 0px);
+							transition: 1s;
+
+							margin-left: 20px;
+						}
+
+						#gone {
+							transform: translate3d(0px, -256px, 0px);
+							transition: 1s;
+						}
+
+						#back {
+							transform: translate3d(0px, 0px, 0px);
+							transition: 1s;
+						}
+
+						.mobileHeader {
+							display: inline;
+							width: 100%;
+							text-align: right;
+							z-index: 1030;
+						}
+						.visible {
+							transform: translate3d(0px, 0px, 0px);
+							transition: 1s;
+						}
 					}
 				`}</style>
 			</div>

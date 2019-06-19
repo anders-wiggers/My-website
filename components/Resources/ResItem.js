@@ -75,6 +75,12 @@ export class ResItem extends Component {
 							color: white;
 							padding: 10px;
 						}
+
+						@media screen and (max-width: 600px) {
+							.box {
+								margin: 0 auto;
+							}
+						}
 					`}</style>
 				</div>
 			</Link>

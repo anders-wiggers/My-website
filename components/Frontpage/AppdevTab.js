@@ -52,13 +52,16 @@ class AppdevTab extends Component {
 			<div>
 				<div className="tab">
 					<button className="tablinks" onClick={() => this.ShowHideTextComponentView('and', '370')}>
-						<i className="fab fa-android" /> Android
+						<i className="fab fa-android" />
+						<br /> Android
 					</button>
 					<button className="tablinks" onClick={() => this.ShowHideTextComponentView('rea', '370')}>
-						<i className="fab fa-react" /> React Native
+						<i className="fab fa-react" />
+						<br /> React Native
 					</button>
 					<button className="tablinks" onClick={() => this.ShowHideTextComponentView('flu', '370')}>
-						<i className="fab fa-react" /> Flutter
+						<i className="fab fa-react" />
+						<br /> Flutter
 					</button>
 				</div>
 
@@ -184,6 +187,7 @@ class AppdevTab extends Component {
 					.tab button {
 						width: 150px;
 						background-color: inherit;
+						line-height: 1.5;
 						float: left;
 						border: none;
 						outline: none;
@@ -201,6 +205,17 @@ class AppdevTab extends Component {
 					/* Create an active/current tablink class */
 					.tab button.active {
 						background-color: #ccc;
+					}
+					@media screen and (max-width: 600px) {
+						.tab button {
+							line-height: 1;
+						}
+						.demo0 {
+							display: none;
+						}
+						.main {
+							height: auto;
+						}
 					}
 				`}</style>
 			</div>
