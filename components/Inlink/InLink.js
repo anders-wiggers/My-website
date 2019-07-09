@@ -145,7 +145,7 @@ export default class InLink extends Component {
 								<Menu current={this.state.currentPage} changeSite={this.handleChangeSite} />
 							</div>
 							<div className="col-8">
-								<p>Hii</p>
+								<div className="margin" />
 								{this.state.data.data.map((posts) => (
 									<SimpleImage url={posts.images.standard_resolution.url} key={posts.id} />
 								))}
@@ -154,6 +154,9 @@ export default class InLink extends Component {
 					</div>
 				</div>
 				<style jsx>{`
+					.margin {
+						margin-top: 20px;
+					}
 					.bg {
 						width: 100vw;
 						position: relative;

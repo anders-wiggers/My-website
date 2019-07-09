@@ -80,6 +80,7 @@ export default class dashboard extends Component {
 						margin-right: auto;
 						width: 70%;
 						margin-top: 20px;
+						max-width: 150px;
 					}
 					.logged {
 						background-color: #f8fdff;
