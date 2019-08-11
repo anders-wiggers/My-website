@@ -15,7 +15,7 @@ export default class dashboard extends Component {
 				<h2 className="title"> Welcome to inLink</h2>
 				<div className="blueDecal">
 					<div className="user">
-						<div className="logged"> Logged in as:</div>
+						<div className="logged">Logged in as:</div>
 						<div className="row">
 							<div className="col-6 ig">
 								<img className="igPicture" src={user.profile_picture} />
