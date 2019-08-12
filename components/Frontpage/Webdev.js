@@ -166,6 +166,9 @@ class Webdev extends Component {
 						.blue {
 							background-color: blue;
 						}
+						.mobile {
+							display: none;
+						}
 						p {
 							line-height: 1.5;
 						}
