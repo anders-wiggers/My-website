@@ -1,6 +1,6 @@
 import react, { Component } from 'react';
 import _JSXStyle from 'styled-jsx/style';
-import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
+import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
 
 class Webdev extends Component {
 	render() {
