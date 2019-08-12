@@ -107,6 +107,7 @@ typings/
 .AppleDouble
 .LSOverride
 
+# Lock file
 package-lock.json
 
 # Config file
