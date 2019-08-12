@@ -10,7 +10,7 @@ class Entry extends Component {
 				<div id="typed">
 					<Typed
 						strings={[
-							'Hey! my name is Anders 👋',
+							'Hey! my name is Anders',
 							'I develop Applications',
 							'I develop Websites',
 							'And much more!',
