@@ -19,6 +19,30 @@ const Repo = ({ repo }) => (
 	</tr>
 );
 
+const MobileRepo = ({ repo }) => (
+	<div className="contain">
+		<h5>
+			<a href={repo.html_url} target="_blank">
+				{repo.name}
+			</a>
+		</h5>
+		<div>Language: {repo.language}</div>
+		<div>Size: {repo.size}</div>
+		<div>{repo.stargazers_count} Stars</div>
+		<style jsx>{`
+			a {
+				color: #364350;
+			}
+			.contain {
+				padding: 10px;
+				background: #f7f7f7;
+				margin: 10px;
+				overflow: hidden;
+			}
+		`}</style>
+	</div>
+);
+
 export default class GitHubRepos extends React.Component {
 	constructor(props) {
 		super(props);
@@ -85,7 +109,6 @@ export default class GitHubRepos extends React.Component {
 		return (
 			<div className="smallCon">
 				<h3>My Software Repository</h3>
-
 				<table className="table table-striped">
 					<thead>
 						<tr>
@@ -97,6 +120,7 @@ export default class GitHubRepos extends React.Component {
 					</thead>
 					<tbody>{repos.map((repo) => <Repo repo={repo} key={repo.id} />)}</tbody>
 				</table>
+				{repos.map((repo) => <MobileRepo repo={repo} key={repo.id} />)}
 				<style jsx>{`
 					h3 {
 						padding-bottom: 20px;
@@ -104,6 +128,11 @@ export default class GitHubRepos extends React.Component {
 					.smallCon {
 						display: table-cell;
 						vertical-align: middle;
+					}
+					@media screen and (max-width: 600px) {
+						.table {
+							display: none;
+						}
 					}
 				`}</style>
 			</div>

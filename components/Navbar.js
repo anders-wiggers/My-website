@@ -216,7 +216,7 @@ class Navbar extends Component {
 
 						.mobileHeader {
 							display: inline;
-							width: 100%;
+							margin-left: 90%;
 							text-align: right;
 							z-index: 1030;
 						}
