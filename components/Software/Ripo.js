@@ -38,6 +38,12 @@ const MobileRepo = ({ repo }) => (
 				background: #f7f7f7;
 				margin: 10px;
 				overflow: hidden;
+				display: none;
+			}
+			@media screen and (max-width: 600px) {
+				.contain {
+					display: block;
+				}
 			}
 		`}</style>
 	</div>
