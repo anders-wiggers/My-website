@@ -269,6 +269,13 @@ class Appdev extends Component {
 								height: auto;
 							}
 						}
+						@media (prefers-color-scheme: dark) {
+							.main {
+								background: #232527;
+								color: #505050;
+							}
+						}
+					}
 					`}</style>
 				</div>
 			</Element>

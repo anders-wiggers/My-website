@@ -217,6 +217,17 @@ class AppdevTab extends Component {
 							height: auto;
 						}
 					}
+					@media (prefers-color-scheme: dark) {
+						.tab button:hover {
+							background-color: #333;
+						}
+						.tab button {
+							color: #868686;
+						}
+						.demo0-block {
+							background-color: rgb(64, 64, 64);
+						}
+					}
 				`}</style>
 			</div>
 		);

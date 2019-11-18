@@ -15,6 +15,11 @@ const Repo = ({ repo }) => (
 			a {
 				color: #364350;
 			}
+			@media (prefers-color-scheme: dark) {
+				a {
+					color: #505050;
+				}
+			}
 		`}</style>
 	</tr>
 );
@@ -138,6 +143,12 @@ export default class GitHubRepos extends React.Component {
 					@media screen and (max-width: 600px) {
 						.table {
 							display: none;
+						}
+					}
+					@media (prefers-color-scheme: dark) {
+						table {
+							color: #505050;
+							border-color: ;
 						}
 					}
 				`}</style>

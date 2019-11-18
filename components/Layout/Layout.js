@@ -58,12 +58,25 @@ export default class Layout extends Component {
 
 					@media (prefers-color-scheme: dark) {
 						body {
-							color: #fff;
+							color: #505050;
 							background-color: #1d1c1c;
 						}
 						.bg-light {
-							background-color: black !important;
-							color: white;
+							background-color: #282b2d !important;
+							color: #fff;
+						}
+						.navbar-light .navbar-nav .nav-link {
+							color: rgba(255, 255, 255, 0.5);
+						}
+						.navbar-light .navbar-nav .active > .nav-link,
+						.navbar-light .navbar-nav .nav-link.active,
+						.navbar-light .navbar-nav .nav-link.show,
+						.navbar-light .navbar-nav .show > .nav-link {
+							color: rgba(255, 255, 255, 0.76);
+						}
+						.navbar-light .navbar-nav > li > a:hover,
+						.navbar-light .navbar-nav > li > a:focus {
+							color: #fff !important;
 						}
 					}
 				`}</style>

@@ -199,6 +199,11 @@ class Webdev extends Component {
 								padding: 20px;
 							}
 						}
+						@media (prefers-color-scheme: dark) {
+							.main {
+								color: #505050;
+							}
+						}
 					`}</style>
 				</div>
 			</Element>

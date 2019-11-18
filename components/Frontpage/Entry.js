@@ -69,6 +69,14 @@ class Entry extends Component {
 							padding-top: 30vh;
 						}
 					}
+					@media (prefers-color-scheme: dark) {
+						.goto:hover {
+							color: white;
+						}
+						#typed {
+							color: #505050;
+						}
+					}
 				`}</style>
 			</div>
 		);
