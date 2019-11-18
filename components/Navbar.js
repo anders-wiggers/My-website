@@ -225,6 +225,11 @@ class Navbar extends Component {
 							transition: 1s;
 						}
 					}
+					@media (prefers-color-scheme: dark) {
+						.bg-light {
+							background-color: red;
+						}
+					}
 				`}</style>
 			</div>
 		);

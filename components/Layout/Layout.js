@@ -18,7 +18,7 @@ export default class Layout extends Component {
 	}
 	render() {
 		return (
-			<div style={body}>
+			<div>
 				<Head>
 					<title>{this.props.title}</title>
 					<link rel="icon" type="image/x-icon" href="/static/images/aw.png" />
@@ -45,20 +45,32 @@ export default class Layout extends Component {
 					{this.props.children}
 				</div>
 				<Footer />
+				<style jsx global>{`
+					body {
+						color: #000;
+						background-color: #fff;
+						font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", "Fira Sans", Avenir,
+							"Helvetica Neue", "Lucida Grande", sans-serif;
+						height: 100vh;
+						text-align: left;
+						WebkitFontSmoothing: antialiased;
+					}
+
+					@media (prefers-color-scheme: dark) {
+						body {
+							color: #fff;
+							background-color: #1d1c1c;
+						}
+						.bg-light {
+							background-color: black !important;
+							color: white;
+						}
+					}
+				`}</style>
 			</div>
 		);
 	}
 }
-
-const body = {
-	color: '#000',
-	backgroundColor: '#fff',
-	fontFamily:
-		'-apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", "Fira Sans", Avenir, "Helvetica Neue", "Lucida Grande", sans-serif',
-	height: '100vh',
-	textAlign: 'left',
-	WebkitFontSmoothing: 'antialiased'
-};
 
 const defualtPadding = {
 	padding: '10px',
