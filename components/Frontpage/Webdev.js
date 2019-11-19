@@ -201,7 +201,7 @@ class Webdev extends Component {
 						}
 						@media (prefers-color-scheme: dark) {
 							.main {
-								color: #505050;
+								color: #909090;
 							}
 						}
 					`}</style>

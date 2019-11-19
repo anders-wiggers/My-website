@@ -232,6 +232,14 @@ export class Converter extends Component {
 							width: 178px;
 						}
 					}
+					@media (prefers-color-scheme: dark) {
+						.box {
+							background-color: #262729;
+						}
+						.MuiFormLabel-root {
+							color: white;
+						}
+					}
 				`}</style>
 			</div>
 		);

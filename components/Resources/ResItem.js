@@ -41,7 +41,7 @@ export class ResItem extends Component {
 								rgba(255, 255, 255, 0) 0%,
 								rgba(95, 196, 221, 1) 100%
 							);
-							background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgb(0, 175, 224) 100%);
+							background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgb(0, 175, 224, 0) 100%);
 							filter: progid:DXImageTransform.Microsoft.gradient(
 									startColorstr='#00ffffff',
 									endColorstr='#5fc4dd',
@@ -79,6 +79,18 @@ export class ResItem extends Component {
 						@media screen and (max-width: 600px) {
 							.box {
 								margin: 0 auto;
+							}
+						}
+						@media (prefers-color-scheme: dark) {
+							.inner {
+								color: #bbbbbb;
+							}
+							.box {
+								background: #262729;
+							}
+							.fader {
+								background: rgb(38, 39, 41);
+								background: linear-gradient(0deg, rgba(38, 39, 41, 0) 0%, rgba(255, 0, 0, 0) 100%);
 							}
 						}
 					`}</style>

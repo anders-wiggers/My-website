@@ -58,7 +58,7 @@ export default class Layout extends Component {
 
 					@media (prefers-color-scheme: dark) {
 						body {
-							color: #505050;
+							color: #909090;
 							background-color: #1d1c1c;
 						}
 						.bg-light {

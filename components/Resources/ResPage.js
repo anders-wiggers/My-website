@@ -140,6 +140,15 @@ export default class ResPage extends Component {
 							padding: 0px;
 						}
 					}
+					@media (prefers-color-scheme: dark) {
+						.outer {
+							background-color: #27292d;
+						}
+						.res {
+							background-color: #36383c;
+							color: #c7c7c7;
+						}
+					}
 				`}</style>
 				<style jsx global>{`
 					.img {
@@ -215,6 +224,11 @@ export default class ResPage extends Component {
 						word-wrap: normal;
 						overflow-x: auto;
 						margin: 20px;
+					}
+					@media (prefers-color-scheme: dark) {
+						.beauty {
+							color: white;
+						}
 					}
 				`}</style>
 			</div>

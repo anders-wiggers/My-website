@@ -9,7 +9,7 @@ const Repo = ({ repo }) => (
 			</a>
 		</td>
 		<td>{repo.language}</td>
-		<td>{repo.size}</td>
+		<td>{repo.size} kb</td>
 		<td>{repo.stargazers_count} Stars</td>
 		<style jsx>{`
 			a {
@@ -17,7 +17,7 @@ const Repo = ({ repo }) => (
 			}
 			@media (prefers-color-scheme: dark) {
 				a {
-					color: #505050;
+					color: #909090;
 				}
 			}
 		`}</style>
@@ -32,7 +32,7 @@ const MobileRepo = ({ repo }) => (
 			</a>
 		</h5>
 		<div>Language: {repo.language}</div>
-		<div>Size: {repo.size}</div>
+		<div>Size: {repo.size} kb</div>
 		<div>{repo.stargazers_count} Stars</div>
 		<style jsx>{`
 			a {
@@ -48,6 +48,15 @@ const MobileRepo = ({ repo }) => (
 			@media screen and (max-width: 600px) {
 				.contain {
 					display: block;
+				}
+			}
+			@media (prefers-color-scheme: dark) {
+				a {
+					color: #909090;
+				}
+				.contain {
+					background-color: #262729;
+					color: #909090;
 				}
 			}
 		`}</style>
@@ -147,7 +156,7 @@ export default class GitHubRepos extends React.Component {
 					}
 					@media (prefers-color-scheme: dark) {
 						table {
-							color: #505050;
+							color: #909090;
 							border-color: ;
 						}
 					}

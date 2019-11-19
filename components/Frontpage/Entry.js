@@ -74,7 +74,7 @@ class Entry extends Component {
 							color: white;
 						}
 						#typed {
-							color: #505050;
+							color: #909090;
 						}
 					}
 				`}</style>

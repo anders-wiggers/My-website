@@ -272,7 +272,7 @@ class Appdev extends Component {
 						@media (prefers-color-scheme: dark) {
 							.main {
 								background: #232527;
-								color: #505050;
+								color: #909090;
 							}
 						}
 					}
