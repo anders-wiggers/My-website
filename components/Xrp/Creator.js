@@ -241,6 +241,21 @@ export class Creator extends Component {
 							padding: 20px 10px 20px 10px;
 						}
 					}
+					@media (prefers-color-scheme: dark) {
+						.holder {
+							background-color: #232323;
+							color: #909090;
+						}
+						.flat-button {
+							background: #262729;
+						}
+						.flat-button:after {
+							background: #2f3131;
+						}
+						table {
+							color: #909090;
+						}
+					}
 				`}</style>
 			</div>
 		);

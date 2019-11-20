@@ -6,7 +6,6 @@ import Contact from '../components/Contact/Contact';
 const Contacts = () => (
 	<Layout title="Contact me" menu="contact">
 		<div>
-			<h1>Contacts</h1>
 			<Contact />
 			<OtherMeans />
 		</div>

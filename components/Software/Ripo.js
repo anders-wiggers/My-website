@@ -105,6 +105,11 @@ export default class GitHubRepos extends React.Component {
 					img {
 						height: 50px;
 					}
+					@media (prefers-color-scheme: dark) {
+						img {
+							filter: invert(0.891);
+						}
+					}
 				`}</style>
 			</div>
 		);

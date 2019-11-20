@@ -92,6 +92,11 @@ export default class Xrp extends React.Component {
 					img {
 						height: 200px;
 					}
+					@media (prefers-color-scheme: dark) {
+						img {
+							filter: invert(0.891);
+						}
+					}
 				`}</style>
 			</div>
 		);
@@ -103,7 +108,7 @@ export default class Xrp extends React.Component {
 		return (
 			<div className="smallCon">
 				<h1 className="xrp">
-					XRP is at: <span className={this.state.currentClass + ' boxed'}>{xrp.last}</span>
+					XRP is at: <span className={this.state.currentClass + ' boxed'}>{xrp.last} €</span>
 				</h1>
 				<div>
 					<table className="table table-striped">
@@ -277,6 +282,17 @@ export default class Xrp extends React.Component {
 					.flat-button:hover::after {
 						transform: translateY(-80%);
 						transition: transform .3s;
+					}
+					@media (prefers-color-scheme: dark) {
+						.flat-button {
+							background: #262729;
+						}
+						.flat-button:after {
+							background: #2f3131;
+						}
+						table {
+							color: #909090;
+						}
 					}
 				`}</style>
 			</div>

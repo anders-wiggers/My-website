@@ -96,21 +96,21 @@ class Navbar extends Component {
 								<a className="nav-link">SOFTWARE</a>
 							</Link>
 						</li>
-						<li className={this.state.pro}>
+						{/* <li className={this.state.pro}>
 							<Link href="/projects">
 								<a className="nav-link">PROJECTS</a>
 							</Link>
-						</li>
+						</li> */}
 						<li className={this.state.res}>
 							<Link href="/resources">
 								<a className="nav-link">RESOURCES</a>
 							</Link>
 						</li>
-						<li className={this.state.cv}>
+						{/* <li className={this.state.cv}>
 							<Link href="/cv">
 								<a className="nav-link">CV</a>
 							</Link>
-						</li>
+						</li>*/}
 						<li className={this.state.contact}>
 							<Link href="/contact">
 								<a className="nav-link">CONTACT</a>

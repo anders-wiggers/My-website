@@ -148,6 +148,14 @@ export default class Contact extends Component {
 						margin: 0 auto;
 						width: 304px;
 					}
+					@media (prefers-color-scheme: dark) {
+						.form {
+							background-color: #242525;
+						}
+						.goto {
+							color: #bbbbbb;
+						}
+					}
 				`}</style>
 			</div>
 		);

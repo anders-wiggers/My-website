@@ -57,6 +57,17 @@ export default class OtherMeans extends Component {
 							text-align: center;
 							margin: 30px;
 						}
+						@media (prefers-color-scheme: dark) {
+							.social {
+								background-color: #242525;
+							}
+						}
+						a:link {
+							color: #bbbbbb;
+						}
+						a:visited {
+							color: #bbbbbb;
+						}
 					`}</style>
 				</div>
 			</Element>

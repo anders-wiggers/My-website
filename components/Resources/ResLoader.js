@@ -53,6 +53,11 @@ export default class ResLoader extends React.Component {
 					img {
 						height: 200px;
 					}
+					@media (prefers-color-scheme: dark) {
+						img {
+							filter: invert(0.891);
+						}
+					}
 				`}</style>
 			</div>
 		);
