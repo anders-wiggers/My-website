@@ -8,6 +8,22 @@ class Entry extends Component {
 		return (
 			<div id="fiesta" className="fiesta">
 				<div id="typed">
+					<img className="me" src="/static/images/anders-wiggers.jpg" />
+					<div className="textbox">
+						<Typed
+							strings={[
+								'Hey! my name is Anders',
+								'I develop Applications',
+								'I develop Websites',
+								'And much more!',
+								'You can take a look at my portfolio or contact me!'
+							]}
+							typeSpeed={80}
+							backSpeed={40}
+							loop={true}
+							smartBackspace={true}
+						/>
+					</div>
 					<Link
 						activeClass="active"
 						to="test1"
@@ -24,52 +40,35 @@ class Entry extends Component {
 							</h3>
 						</div>
 					</Link>
-					<div className="textbox">
-						<Typed
-							strings={[
-								'Hey! my name is Anders',
-								'I develop Applications',
-								'I develop Websites',
-								'And much more!',
-								'You can take a look at my portfolio or contact me!'
-							]}
-							typeSpeed={80}
-							backSpeed={40}
-							loop={true}
-							smartBackspace={true}
-						/>
-					</div>
-					<img className="me" src="/static/images/anders-wiggers.jpg" />
 				</div>
 
 				<style jsx>{`
 					.textbox {
-						background: #292c2f;
-						padding: 20px;
 						border-radius: 20px;
 						position: relative;
 						z-index: 2;
 						max-width: 900px;
 						margin: 0 auto;
+						margin-top: 2vh;
 					}
 					.fiesta {
-						height: calc(100vh - 60px);
+						min-height: calc(100vh - 60px);
 					}
 					.me {
 						width: 50vw;
 						max-width: 400px;
-						margin-top: -50vh;
-						margin-left: -40vw;
 						border-radius: 10000px;
 						z-index: 0;
+						margin-top: 10vh;
 						position: relative;
 					}
 					.goto {
 						cursor: pointer;
 						width: 100%;
 						z-index: 1;
-						margin-top: 40vh;
-						position: absolute;
+						position: 
+						margin: 0 auto;
+						margin-top: 20vh;
 					}
 					.goto:hover {
 						color: black;
@@ -81,7 +80,6 @@ class Entry extends Component {
 						background-color: #white;
 						font-size: 2.5em;
 						text-align: center;
-						margin-top: calc(50vh - 2.5em);
 					}
 					@media screen and (max-width: 600px) {
 						#typed {
