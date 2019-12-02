@@ -8,6 +8,8 @@ RUN npm install
 
 COPY . .
 
-RUN npm run build
+RUN ["chmod", "+x", "/usr/src/app/preb-build.sh"]
 
-CMD ["npm", "start"]
+ENTRYPOINT [ "sh", "/usr/src/app/preb-build.sh" ]
+
+CMD [ "http://localhost:3001","http://localhost:3000", "nil", "nil" ]
