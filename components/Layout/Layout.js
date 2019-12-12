@@ -54,6 +54,8 @@ export default class Layout extends Component {
 						height: 100vh;
 						text-align: left;
 						WebkitFontSmoothing: antialiased;
+						overflow-x: hidden;
+						overflow-y: scroll;
 					}
 
 					@media (prefers-color-scheme: dark) {
