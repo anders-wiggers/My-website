@@ -89,12 +89,11 @@ class Entry extends Component {
 						text-align: center;
 					}
 					@media screen and (max-width: 600px) {
-						#typed {
-							padding-top: 32vh;
-							line-height: 1;
-						}
 						.goto {
-							padding-top: 30vh;
+							margin-top: calc(90vh - 50vw - 60px - 65px - 50px);
+						}
+						.typeText {
+							margin-top: calc(-90vh + 50vw + 60px + 65px);
 						}
 					}
 					@media (prefers-color-scheme: dark) {
