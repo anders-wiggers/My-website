@@ -10,36 +10,38 @@ class Entry extends Component {
 				<div id="typed">
 					<img className="me" src="/static/images/anders-wiggers.jpg" />
 					<div className="textbox">
-						<Typed
-							strings={[
-								'Hey! my name is Anders',
-								'I develop Applications',
-								'I develop Websites',
-								'And much more!',
-								'You can take a look at my portfolio or contact me!'
-							]}
-							typeSpeed={80}
-							backSpeed={40}
-							loop={true}
-							smartBackspace={true}
-						/>
-					</div>
-					<Link
-						activeClass="active"
-						to="test1"
-						spy={true}
-						smooth={true}
-						offset={0}
-						duration={1000}
-						onSetActive={this.handleSetActive}
-					>
-						<div className="goto">
-							<h5>See more </h5>
-							<h3>
-								<span className="fa fa-sort-down" />
-							</h3>
+						<Link
+							activeClass="active"
+							to="test1"
+							spy={true}
+							smooth={true}
+							offset={0}
+							duration={1000}
+							onSetActive={this.handleSetActive}
+						>
+							<div className="goto">
+								<h5>See more </h5>
+								<h3>
+									<span className="fa fa-sort-down" />
+								</h3>
+							</div>
+						</Link>
+						<div className="typeText">
+							<Typed
+								strings={[
+									'Hey! my name is Anders',
+									'I develop Applications',
+									'I develop Websites',
+									'And much more!',
+									'You can take a look at my portfolio or contact me!'
+								]}
+								typeSpeed={80}
+								backSpeed={40}
+								loop={true}
+								smartBackspace={true}
+							/>
 						</div>
-					</Link>
+					</div>
 				</div>
 
 				<style jsx>{`
@@ -62,13 +64,18 @@ class Entry extends Component {
 						margin-top: 10vh;
 						position: relative;
 					}
+					.typeText {
+						position: relative;
+						z-index: 1;
+						margin-top: calc(-90vh + 400px + 60px + 65px);
+					}
 					.goto {
 						cursor: pointer;
 						width: 100%;
-						z-index: 1;
-						position: 
+						z-index: 2;
+						position: relative;
 						margin: 0 auto;
-						margin-top: 20vh;
+						margin-top: calc(90vh - 400px - 60px - 65px - 50px);
 					}
 					.goto:hover {
 						color: black;

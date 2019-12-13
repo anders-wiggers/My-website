@@ -195,6 +195,7 @@ class AppdevTab extends Component {
 						padding: 14px 16px;
 						transition: 0.3s;
 						border-radius: 4px 4px 0px 0px;
+						color: #333;
 					}
 
 					/* Change background color of buttons on hover */
