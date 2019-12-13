@@ -7,7 +7,7 @@ import Skills from '../components/Frontpage/skills';
 const Index = () => (
 	<Layout title="Anders Wiggers" menu="aw">
 		<Entry />
-		<Skills />
+
 		<Appdev />
 		<Webdev />
 	</Layout>
