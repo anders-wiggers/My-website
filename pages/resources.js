@@ -1,6 +1,7 @@
 import Layout from '../components/Layout/Layout.js';
 import ResLoader from '../components/Resources/ResLoader';
 import ResPage from '../components/Resources/ResPage';
+import SEO from 'react-seo-component';
 
 import { withRouter } from 'next/router';
 import React, { Component } from 'react';
@@ -41,7 +42,16 @@ class Resources extends Component {
 		}
 
 		//console.log(isQuery)
-		return isQuery ? this.renderDefault() : this.renderQuery();
+		return (
+			<div>
+				<SEO
+					title="Resources"
+					description="Resources, tool, guides and other helpful stuff i have created."
+					pathname="https://anderswiggers.dk/resources"
+				/>
+				{isQuery ? this.renderDefault() : this.renderQuery()}
+			</div>
+		);
 	}
 }
 
