@@ -36,7 +36,7 @@
     "@material-ui/core": "^4.0.1",
     "@zeit/next-css": "^1.0.1",
     "axios": "^0.18.1",
-    "next": "^8.0.3",
+    "next": "^9.3.3",
     "react": "^16.8.6",
     "react-aria": "^0.9.5",
     "react-dom": "^16.8.6",
