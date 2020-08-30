@@ -99,7 +99,7 @@ class AppdevTab extends Component {
 							</a>
 						</p>
 						<p>
-							I've also develop a Game called Primite, which is a simple clicker game where the player
+							I've also developed a Game called Primite, which is a simple clicker game where the player
 							gathers strength and loot over time. The main focus of the development was to use as many
 							programming patterns as possible.
 						</p>
@@ -116,13 +116,13 @@ class AppdevTab extends Component {
 						<h3>React Native</h3>
 						<p>
 							React Native is a framework for building a cross-platform mobile application. The
-							programming langue is Javascript and is really close to the syntax used for React JS which
-							is the framework this website is built on.
+							programming langue is Javascript and is close to the syntax used for React JS which is the
+							framework this website is built on.
 						</p>
 
 						<p>
-							I have created a few applications using React Native, none of these apps are available on
-							GitHub however, as they have been developed for schoolwork and for private use only.
+							I have created a few applications using React Native, none of these apps is available on
+							GitHub however, as they have been developed for schoolwork and private use only.
 						</p>
 					</div>
 				) : null}
@@ -136,13 +136,13 @@ class AppdevTab extends Component {
 						</p>
 
 						<p>
-							Flutter is created by Google and uses the Dart language, which i've never used before.
-							However, the syntax is like Java and a bit of Javascript which I'm really familiar with.{' '}
+							Flutter is created by Google and uses the Dart language, which I've never used before.
+							However, the syntax is like Java and a bit of Javascript which I'm familiar with.{' '}
 						</p>
 
 						<p>
 							I don't have any project created in a flutter to share at this time, but check back later as
-							there is a project in the pipeline, which I think is going to be really cool
+							there is a project in the pipeline, which I think is going to be cool
 						</p>
 					</div>
 				) : null}

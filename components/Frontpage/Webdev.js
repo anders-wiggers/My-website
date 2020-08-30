@@ -16,7 +16,7 @@ class Webdev extends Component {
 							<div className="col-8">
 								<span>
 									I have been developing on the web stack since I was 10. The last two years I've
-									focused on full stack development. My interest in this started with an IoT course
+									focused on full-stack development. My interest in this started with an IoT course
 									were we learned how to develop an API and back end with Express and Node.js and I've
 									been using these tools ever since.
 								</span>
@@ -42,8 +42,8 @@ class Webdev extends Component {
 							<div className="col-8">
 								<span>
 									For backend work, I have been using Express as it is a light-weight web application
-									framework to help organize my web application into an MVC architecture on the server
-									side.
+									framework to help organize my web application into an MVC architecture on the
+									server-side.
 								</span>
 							</div>
 						</div>
@@ -107,7 +107,7 @@ class Webdev extends Component {
 							<div className="col-8">
 								<span>
 									For database management, I've tried a lot of different solutions. This website uses
-									Mongo DB as it was a system I've never tried before, however, i also have experience
+									Mongo DB as it was a system I've never tried before, however, I also have experience
 									with MySQL and SQLite
 								</span>
 							</div>
