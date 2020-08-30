@@ -2,7 +2,7 @@ import Layout from '../components/Layout/Layout.js';
 import Entry from '../components/Frontpage/EntryRemasterd.js';
 import Appdev from '../components/Frontpage/Appdev.js';
 import Webdev from '../components/Frontpage/Webdev.js';
-import Product from '../components/Frontpage/Projectdev';
+import TA from '../components/Frontpage/Ta';
 import SEO from 'react-seo-component';
 
 const Index = () => (
@@ -15,7 +15,7 @@ const Index = () => (
 		<Entry />
 		<Appdev />
 		<Webdev />
-		<Product />
+		<TA />
 	</Layout>
 );
 

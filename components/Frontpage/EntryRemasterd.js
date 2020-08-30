@@ -40,18 +40,7 @@ class Entry extends Component {
 									</Link>
 									<Link
 										activeClass="active"
-										to="ProductDev"
-										spy={true}
-										smooth={true}
-										offset={0}
-										duration={1000}
-										onSetActive={this.handleSetActive}
-									>
-										<li>Product development</li>
-									</Link>
-									<Link
-										activeClass="active"
-										to="test1"
+										to="ta"
 										spy={true}
 										smooth={true}
 										offset={0}
