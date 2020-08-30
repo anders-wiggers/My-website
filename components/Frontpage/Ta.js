@@ -119,6 +119,10 @@ export default class skills extends Component {
 									background: #232527;
 									color: #909090;
 								}
+								table {
+									color: #909090;
+									border-color: ;
+								}
 							}
 						`}
 					</style>

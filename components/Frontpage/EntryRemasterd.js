@@ -157,7 +157,7 @@ class Entry extends Component {
 					.me {
 						width: 20vw;
 						max-width: 100%;
-						border-radius: 10000px;
+						border-radius: 150px;
 						z-index: 0;
 						position: relative;
 					}
