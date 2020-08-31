@@ -118,12 +118,6 @@ class Webdev extends Component {
 							line-height: 1.5;
 						}
 						@media screen and (max-width: 600px) {
-							.container {
-								display: none;
-							}
-							.mobile {
-								display: inline;
-							}
 							.express {
 								font-size: 20vw;
 							}

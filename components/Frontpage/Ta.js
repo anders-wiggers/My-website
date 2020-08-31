@@ -19,7 +19,7 @@ export default class skills extends Component {
 							</span>
 							<p>Below is an overview of the courses I have TA'ed in.</p>
 						</div>
-						<div id="tableContainer">
+						<div id="tableContainer" className="normalc">
 							<table className="table table-striped">
 								<thead>
 									<tr>
@@ -54,9 +54,34 @@ export default class skills extends Component {
 								</tbody>
 							</table>
 						</div>
+						<div id="mobile">
+							<div>
+								<h4>The Web of Things</h4>
+								<p>
+									The purpose of the course is to introduce the WWW and its architecture, as well as
+									the concepts and realities behind pervasive computing.
+								</p>
+							</div>
+							<div>
+								<h4>Introduction to Human-Computer Interaction</h4>
+								<p>
+									The course aims to introduce students to the basic elements of Human-Computer
+									Interaction (HCI). The goal is for students to gain a solid understanding of HCI
+									issues relevant to the development of any kind of interactive system. This includes
+									an understanding of human abilities and characteristics; of design principles and
+									guidelines; and of forms of interaction and input/output devices. Students learn how
+									usability can be measured, and practice analysis, design, implementation, and
+									evaluation of user interfaces.
+								</p>
+							</div>
+						</div>
 					</div>
+
 					<style jsx>
 						{`
+							#mobile {
+								display: none;
+							}
 							p {
 								padding: 20px;
 							}
@@ -88,10 +113,10 @@ export default class skills extends Component {
 								text-align: center;
 							}
 							@media screen and (max-width: 600px) {
-								.container {
+								.normalc {
 									display: none;
 								}
-								.mobile {
+								#mobile {
 									display: inline;
 								}
 								.express {

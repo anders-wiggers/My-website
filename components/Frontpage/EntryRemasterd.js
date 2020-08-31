@@ -10,58 +10,59 @@ class Entry extends Component {
 					<div className="row">
 						<div className="col-8">
 							<div id="bg1" />
-
 							<div id="bg2" />
 							<div id="infobox">
-								<h1>Welcome to my personal portfolio</h1>
-								<p>I do:</p>
-								<ul>
-									<Link
-										activeClass="active"
-										to="test1"
-										spy={true}
-										smooth={true}
-										offset={0}
-										duration={1000}
-										onSetActive={this.handleSetActive}
-									>
-										<li>Application Development</li>
-									</Link>
-									<Link
-										activeClass="active"
-										to="webdev"
-										spy={true}
-										smooth={true}
-										offset={0}
-										duration={1000}
-										onSetActive={this.handleSetActive}
-									>
-										<li>Web Development</li>
-									</Link>
-									<Link
-										activeClass="active"
-										to="ta"
-										spy={true}
-										smooth={true}
-										offset={0}
-										duration={1000}
-										onSetActive={this.handleSetActive}
-									>
-										<li>Teaching Experience</li>
-									</Link>
-									<Link
-										activeClass="active"
-										to="bsc"
-										spy={true}
-										smooth={true}
-										offset={0}
-										duration={1000}
-										onSetActive={this.handleSetActive}
-									>
-										<li>Bachelors thesis</li>
-									</Link>
-								</ul>
-								<p>Click above to see more</p>
+								<div>
+									<h1>Welcome to my personal portfolio</h1>
+									<p>I do:</p>
+									<ul>
+										<Link
+											activeClass="active"
+											to="test1"
+											spy={true}
+											smooth={true}
+											offset={0}
+											duration={1000}
+											onSetActive={this.handleSetActive}
+										>
+											<li>Application Development</li>
+										</Link>
+										<Link
+											activeClass="active"
+											to="webdev"
+											spy={true}
+											smooth={true}
+											offset={0}
+											duration={1000}
+											onSetActive={this.handleSetActive}
+										>
+											<li>Web Development</li>
+										</Link>
+										<Link
+											activeClass="active"
+											to="ta"
+											spy={true}
+											smooth={true}
+											offset={0}
+											duration={1000}
+											onSetActive={this.handleSetActive}
+										>
+											<li>Teaching Experience</li>
+										</Link>
+										<Link
+											activeClass="active"
+											to="bsc"
+											spy={true}
+											smooth={true}
+											offset={0}
+											duration={1000}
+											onSetActive={this.handleSetActive}
+										>
+											<li>Bachelors thesis</li>
+										</Link>
+									</ul>
+									<p>Click above to see more</p>
+								</div>
 							</div>
 						</div>
 						<div className="col-4">
@@ -164,6 +165,30 @@ class Entry extends Component {
 					
 					}
 					@media screen and (max-width: 600px) {
+						h1 {
+							font-size: 1em;
+						}
+						li {
+							padding-bottom: 10px;
+						}
+						ul{
+							padding-inline-start: 0px;
+						}
+						#infobox {
+							height:auto;
+							width:auto;
+							margin-top:-520px;
+							display:flex;
+							align-items:center;
+							min-height: 70vh;
+						}
+						.col-8 {
+							max-width: 100%;
+							flex: ;
+						}
+						.col-4 {
+							display:none;
+						}
 						.goto {
 							margin-top: calc(90vh - 50vw - 60px - 65px - 50px);
 						}
