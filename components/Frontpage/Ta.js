@@ -64,7 +64,7 @@ export default class skills extends Component {
 								padding-top: 30px;
 							}
 							#text {
-								padding-top: 20px;
+								padding-top: 80px;
 								line-height: 1.5;
 								text-align: center;
 							}

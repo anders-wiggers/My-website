@@ -3,6 +3,7 @@ import Entry from '../components/Frontpage/EntryRemasterd.js';
 import Appdev from '../components/Frontpage/Appdev.js';
 import Webdev from '../components/Frontpage/Webdev.js';
 import TA from '../components/Frontpage/Ta';
+import Bsc from '../components/Frontpage/BscThesis';
 import SEO from 'react-seo-component';
 
 const Index = () => (
@@ -16,6 +17,7 @@ const Index = () => (
 		<Appdev />
 		<Webdev />
 		<TA />
+		<Bsc />
 	</Layout>
 );
 

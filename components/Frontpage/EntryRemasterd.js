@@ -15,7 +15,7 @@ class Entry extends Component {
 							<div id="infobox">
 								<h1>Welcome to my personal portfolio</h1>
 								<p>I do:</p>
-								<ul class="list">
+								<ul>
 									<Link
 										activeClass="active"
 										to="test1"
@@ -51,7 +51,7 @@ class Entry extends Component {
 									</Link>
 									<Link
 										activeClass="active"
-										to="test1"
+										to="bsc"
 										spy={true}
 										smooth={true}
 										offset={0}
