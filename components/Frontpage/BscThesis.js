@@ -51,9 +51,117 @@ class Webdev extends Component {
 								needed to fully realize its potential.
 							</span>
 						</div>
+						<div id="text">
+							<h4 id="title">Data Gathering Tool</h4>
+							<div className="row">
+								<div className="col-sm">
+									<div className="alignMiddle">
+										We approached this challenge by developing a software layer on top of selenium
+										that can be fed a set of instructions, interpret them, and execute the given
+										commands. The advantage of this approach is that we do not have to program each
+										specific. Another advantage is maintainability. If a sheet changes a value, adds
+										a new column or changes names of data points we do not need to go into the code
+										and change it. We can simply change the instruction file to accommodate the new
+										changes. script.
+									</div>
+								</div>
+								<div className="col-sm">
+									<div className="codebox">
+										{`{
+	"instructions": [
+		{
+			"get": "https://targetwebsite.com/api"
+		},
+		{
+			"switch": "WebApplicationFrame"
+		},
+		{
+			"wait": 2
+		}
+	]
+}`}
+									</div>
+								</div>
+							</div>
+						</div>
+						<div id="text">
+							<h4 id="title">Visualization Tool</h4>
+							<h5 id="title">Filtering Data</h5>
+							<div className="row">
+								<div className="col-4">
+									<img className="img" src="static/images/fitlering.png" />
+								</div>
+								<div className="col-8">
+									<video
+										onloadedmetadata="this.muted = true"
+										autoPlay
+										loop
+										muted
+										playsInline
+										className="vid"
+									>
+										<source src="/static/videos/filteringhd.mp4" type="video/mp4" />
+										Your browser does not support the video tag.
+									</video>
+								</div>
+							</div>
+							<h5 id="title">Relating diffrend data points</h5>
+							<div className="row">
+								<div className="col-4">
+									<img className="img" src="static/images/relation.png" />
+								</div>
+								<div className="col-8">
+									<video
+										onloadedmetadata="this.muted = true"
+										autoPlay
+										loop
+										muted
+										playsInline
+										className="vid"
+									>
+										<source src="/static/videos/relation.mp4" type="video/mp4" />
+										Your browser does not support the video tag.
+									</video>
+								</div>
+							</div>
+							<div>
+								<p className="gitlink">
+									The full project can be found at github:&nbsp;
+									<a
+										href="https://github.com/anders-wiggers/visualization-of-school-data/tree/master/visualization"
+										target="_blank"
+									>
+										<i className="fab fa-github" /> Visualization Web Application
+									</a>
+								</p>
+							</div>
+						</div>
 					</div>
 
 					<style jsx>{`
+						.codebox {
+							padding: 20px;
+							font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+							color: rgb(65, 49, 78);
+							line-height: 1.6em;
+							font-size: 12px;
+							background: rgb(248, 247, 250);
+							border: 1px solid rgb(241, 241, 244);
+							box-shadow: none;
+							white-space: pre;
+							overflow-wrap: normal;
+							overflow-x: auto;
+							margin: 20px;
+						}
+						.gitlink {
+							text-align: center;
+						}
+						.img {
+							width: 100%;
+						}
+						.vid {
+							width: 100%;
+						}
 						#text {
 							padding-top: 80px;
 							line-height: 1.5;
@@ -64,8 +172,17 @@ class Webdev extends Component {
 							font-weight: 100;
 							font-size: 80px;
 						}
+						.alignMiddle {
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							height: 100%;
+						}
 						.col-4 {
 							overflow: hidden;
+							display: flex;
+							justify-content: center;
+							align-items: center;
 						}
 						.padding-fix {
 							padding-top: 80px;
@@ -84,16 +201,6 @@ class Webdev extends Component {
 						.padding {
 							padding-top: 80px;
 							line-height: 1;
-						}
-
-						.col-4 {
-							font-size: 125px;
-							text-align: center;
-						}
-
-						.col-8 {
-							height: 125px;
-							line-height: 125px;
 						}
 
 						span {
