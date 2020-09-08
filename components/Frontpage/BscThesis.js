@@ -56,13 +56,13 @@ class Webdev extends Component {
 							<div className="row">
 								<div className="col-sm">
 									<div className="alignMiddle">
-										We approached this challenge by developing a software layer on top of selenium
-										that can be fed a set of instructions, interpret them, and execute the given
-										commands. The advantage of this approach is that we do not have to program each
-										specific. Another advantage is maintainability. If a sheet changes a value, adds
-										a new column or changes names of data points we do not need to go into the code
-										and change it. We can simply change the instruction file to accommodate the new
-										changes. script.
+										We approached the challenge of scraping webdata by developing a software layer
+										on top of selenium that can be fed a set of instructions, interpret them, and
+										execute the given commands. The advantage of this approach was maintainability.
+										If a values changed, a new was added we did not need to go into the code and
+										change it. We can simply change the instruction file to accommodate the new
+										changes. Meaning that in future work we could develop more sophisticated
+										detection software which outputs the instruction JSON file.
 									</div>
 								</div>
 								<div className="col-sm">
