@@ -86,7 +86,17 @@ class Webdev extends Component {
 						</div>
 						<div id="text">
 							<h4 id="title">Visualization Tool</h4>
-							<h5 id="title">Filtering Data</h5>
+							<h5 className="title_low">Filtering Data</h5>
+							<div>
+								<p>
+									To filter the data we implemented filtering parameters which utilizes scented
+									widgets. Scented Widgets are a form of dynamic query which increases usability in
+									information spaces. The widgets use embedded visualizations on top of graphical user
+									interface controls to enhance exploration of data sets. A scent is generated from
+									social data of other users behavior or data-driven metrics. This scent lowers the
+									"cost" of information gathering and improves exploration of the set.
+								</p>
+							</div>
 							<div className="row">
 								<div className="col-4">
 									<img className="img" src="static/images/fitlering.png" />
@@ -105,7 +115,17 @@ class Webdev extends Component {
 									</video>
 								</div>
 							</div>
-							<h5 id="title">Relating diffrend data points</h5>
+							<h5 className="title_low">Relating diffrend data points</h5>
+							<div>
+								<p>
+									The Relation Phase is centered around a main graphing area where users can choose
+									between different categories on the x- and y-axis through a drop down menu. The
+									designer choice means that if users want to see a graph of grades over income, they
+									have the ability to select them on the different axis. Allowing the users to chose
+									what data is plotted is a better way to drive exploration, because we are not
+									limiting the visualizations to comparisons that we as developers can think of
+								</p>
+							</div>
 							<div className="row">
 								<div className="col-4">
 									<img className="img" src="static/images/relation.png" />
@@ -128,10 +148,14 @@ class Webdev extends Component {
 								<p className="gitlink">
 									The full project can be found at github:&nbsp;
 									<a
-										href="https://github.com/anders-wiggers/visualization-of-school-data/tree/master/visualization"
+										href="https://github.com/anders-wiggers/visualization-of-school-data/"
 										target="_blank"
 									>
 										<i className="fab fa-github" /> Visualization Web Application
+									</a>
+									&nbsp;The Thesis is avaible here:&nbsp;
+									<a href="static/comn_res/bsc_thesis_public_school_data.pdf" target="_blank">
+										<i className="fas fa-copy" /> Bachelor Thesis
 									</a>
 								</p>
 							</div>
@@ -154,6 +178,8 @@ class Webdev extends Component {
 							margin: 20px;
 						}
 						.gitlink {
+							padding-top: 50px;
+							font-size: 1.2em;
 							text-align: center;
 						}
 						.img {
@@ -207,6 +233,11 @@ class Webdev extends Component {
 							display: inline-block;
 							vertical-align: middle;
 							line-height: 1.5;
+						}
+						.title_low {
+							text-align: center;
+							padding-top: 30px;
+							padding-bottom: 20px;
 						}
 						#title {
 							text-align: center;
