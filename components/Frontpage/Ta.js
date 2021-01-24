@@ -13,8 +13,8 @@ export default class skills extends Component {
 								During my time at Aarhus University, I have been assisting in a few courses as a Teacher
 								Assistant (TA). Teacher assistant duties often depend on the course. For example, in the
 								course, The Web of Things I worked primarily at the student’s café where I helped
-								students who had problems understanding the assignments. However, in the course
-								Introduction to Human-Computer Interactions, which I’m currently TA’ing in, I teach in a
+								students who had problems understanding the assignments. In the courses
+								Introduction to Human-Computer Interactions and Experimental System Development I teach in a
 								3-hour session where the students conduct theoretical exercises.
 							</span>
 							<p>Below is an overview of the courses I have TA'ed in.</p>
@@ -49,6 +49,14 @@ export default class skills extends Component {
 											measured, and practice analysis, design, implementation, and evaluation of
 											user interfaces.
 										</td>
+										<td>August 2020 - December 2020</td>
+									</tr>
+									<tr>
+										<th scope="row">Experimental System Development</th>
+										<td>
+											The course aims to introduce students to systems development, especially experimental systems development with user involvement, and practical experience with a number of techniques and methods for experimental systems development. After the course the participants will have practical experience with conducting an experimental project with user participation and have a foundation for understanding different types of system development processes.
+											The working method of the course will also train the participants ability to seek information on their own, to plan and conduct projects, to convey and communicate academic issues and to read and understand scientific papers.
+										</td>
 										<td>Currently TA'ing</td>
 									</tr>
 								</tbody>
@@ -72,6 +80,13 @@ export default class skills extends Component {
 									guidelines; and of forms of interaction and input/output devices. Students learn how
 									usability can be measured, and practice analysis, design, implementation, and
 									evaluation of user interfaces.
+								</p>
+							</div>
+							<div>
+								<h4>Experimental System Development</h4>
+								<p>
+									The course aims to introduce students to systems development, especially experimental systems development with user involvement, and practical experience with a number of techniques and methods for experimental systems development. After the course the participants will have practical experience with conducting an experimental project with user participation and have a foundation for understanding different types of system development processes.
+									The working method of the course will also train the participants ability to seek information on their own, to plan and conduct projects, to convey and communicate academic issues and to read and understand scientific papers.
 								</p>
 							</div>
 						</div>

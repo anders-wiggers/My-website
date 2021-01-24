@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import _JSXStyle from 'styled-jsx/style';
-import './dummy.css';
 
 class Footer extends Component {
 	render() {
