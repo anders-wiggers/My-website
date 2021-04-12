@@ -3,33 +3,33 @@ import _JSXStyle from 'styled-jsx/style';
 import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
 
 class Webdev extends Component {
-	render() {
+	render () {
 		return (
-			<Element name="bsc" className="element">
-				<div className="main">
-					<div className="padding container">
-						<h1 id="title">Bachelor Thesis </h1>
-						<h2 id="title">Web-based Visualization for Exploring Public School Data</h2>
-						<div id="text">
-							<h4 id="title">Summery</h4>
+			<Element id='bsc' name='bsc' className='element'>
+				<div className='main'>
+					<div className='padding container'>
+						<h1 id='title'>Bachelor Thesis </h1>
+						<h2 id='title'>Web-based Visualization for Exploring Public School Data</h2>
+						<div id='text'>
+							<h4 id='title'>Summery</h4>
 							<span>
 								The bachelor thesis, in abstract terms, tackles the problem of gathering a large dataset
 								online, processing it, and presenting the data to a large user-group. In more a concrete
 								context we gathered the data available on public schools in Denmark, processed the data,
 								and created a web-based visualization tool that allows users to search and filter
 								differed schools. The bachelor thesis was written with{' '}
-								<a href="https://www.linkedin.com/in/aron-baldvinsson-48a3a818b/" target="_blank">
+								<a href='https://www.linkedin.com/in/aron-baldvinsson-48a3a818b/' target='_blank'>
 									Aron
 								</a>{' '}
 								and{' '}
-								<a href="https://www.linkedin.com/in/alex-krogh-smythe/" target="_blank">
+								<a href='https://www.linkedin.com/in/alex-krogh-smythe/' target='_blank'>
 									Alex
 								</a>{' '}
 								and supervised by Hans-Jörg
 							</span>
 						</div>
-						<div id="text">
-							<h4 id="title">Abstract</h4>
+						<div id='text'>
+							<h4 id='title'>Abstract</h4>
 							<span>
 								The Danish government encourages all public schools in Denmark to provide as many
 								statistics as possible to The Danish Ministry of Education and Research to store,
@@ -51,11 +51,11 @@ class Webdev extends Component {
 								needed to fully realize its potential.
 							</span>
 						</div>
-						<div id="text">
-							<h4 id="title">Data Gathering Tool</h4>
-							<div className="row">
-								<div className="col-sm">
-									<div className="alignMiddle">
+						<div id='text'>
+							<h4 id='title'>Data Gathering Tool</h4>
+							<div className='row'>
+								<div className='col-sm'>
+									<div className='alignMiddle'>
 										We approached the challenge of scraping webdata by developing a software layer
 										on top of selenium that can be fed a set of instructions, interpret them, and
 										execute the given commands. The advantage of this approach was maintainability.
@@ -65,8 +65,8 @@ class Webdev extends Component {
 										detection software which outputs the instruction JSON file.
 									</div>
 								</div>
-								<div className="col-sm">
-									<div className="codebox">
+								<div className='col-sm'>
+									<div className='codebox'>
 										{`{
 	"instructions": [
 		{
@@ -84,9 +84,9 @@ class Webdev extends Component {
 								</div>
 							</div>
 						</div>
-						<div id="text">
-							<h4 id="title">Visualization Tool</h4>
-							<h5 className="title_low">Filtering Data</h5>
+						<div id='text'>
+							<h4 id='title'>Visualization Tool</h4>
+							<h5 className='title_low'>Filtering Data</h5>
 							<div>
 								<p>
 									To filter the data we implemented filtering parameters which utilizes scented
@@ -97,25 +97,25 @@ class Webdev extends Component {
 									"cost" of information gathering and improves exploration of the set.
 								</p>
 							</div>
-							<div className="row">
-								<div className="col-4">
-									<img className="img" src="static/images/fitlering.png" />
+							<div className='row'>
+								<div className='col-4'>
+									<img className='img' src='static/images/fitlering.png' />
 								</div>
-								<div className="col-8">
+								<div className='col-8'>
 									<video
-										onloadedmetadata="this.muted = true"
+										onloadedmetadata='this.muted = true'
 										autoPlay
 										loop
 										muted
 										playsInline
-										className="vid"
+										className='vid'
 									>
-										<source src="/static/videos/filteringhd.mp4" type="video/mp4" />
+										<source src='/static/videos/filteringhd.mp4' type='video/mp4' />
 										Your browser does not support the video tag.
 									</video>
 								</div>
 							</div>
-							<h5 className="title_low">Relating diffrend data points</h5>
+							<h5 className='title_low'>Relating diffrend data points</h5>
 							<div>
 								<p>
 									The Relation Phase is centered around a main graphing area where users can choose
@@ -126,36 +126,36 @@ class Webdev extends Component {
 									limiting the visualizations to comparisons that we as developers can think of
 								</p>
 							</div>
-							<div className="row">
-								<div className="col-4">
-									<img className="img" src="static/images/relation.png" />
+							<div className='row'>
+								<div className='col-4'>
+									<img className='img' src='static/images/relation.png' />
 								</div>
-								<div className="col-8">
+								<div className='col-8'>
 									<video
-										onloadedmetadata="this.muted = true"
+										onloadedmetadata='this.muted = true'
 										autoPlay
 										loop
 										muted
 										playsInline
-										className="vid"
+										className='vid'
 									>
-										<source src="/static/videos/relation.mp4" type="video/mp4" />
+										<source src='/static/videos/relation.mp4' type='video/mp4' />
 										Your browser does not support the video tag.
 									</video>
 								</div>
 							</div>
 							<div>
-								<p className="gitlink">
+								<p className='gitlink'>
 									The full project can be found at github:&nbsp;
 									<a
-										href="https://github.com/anders-wiggers/visualization-of-school-data/"
-										target="_blank"
+										href='https://github.com/anders-wiggers/visualization-of-school-data/'
+										target='_blank'
 									>
-										<i className="fab fa-github" /> Visualization Web Application
+										<i className='fab fa-github' /> Visualization Web Application
 									</a>
 									&nbsp;The Thesis is avaible here:&nbsp;
-									<a href="static/comn_res/bsc_thesis_public_school_data.pdf" target="_blank">
-										<i className="fas fa-copy" /> Bachelor Thesis
+									<a href='static/comn_res/bsc_thesis_public_school_data.pdf' target='_blank'>
+										<i className='fas fa-copy' /> Bachelor Thesis
 									</a>
 								</p>
 							</div>
