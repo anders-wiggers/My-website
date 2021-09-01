@@ -2,35 +2,35 @@ import React, { Component } from 'react';
 import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
 
 export default class skills extends Component {
-	render() {
+	render () {
 		return (
-			<Element name="ta">
-				<div className="main">
-					<div className="padding container">
-						<h1 id="title">Teaching Experience</h1>
-						<div id="text">
+			<Element name='ta'>
+				<div className='main'>
+					<div className='padding container'>
+						<h1 id='title'>Teaching Experience</h1>
+						<div id='text'>
 							<span>
 								During my time at Aarhus University, I have been assisting in a few courses as a Teacher
 								Assistant (TA). Teacher assistant duties often depend on the course. For example, in the
 								course, The Web of Things I worked primarily at the student’s café where I helped
-								students who had problems understanding the assignments. In the courses
-								Introduction to Human-Computer Interactions and Experimental System Development I teach in a
-								3-hour session where the students conduct theoretical exercises.
+								students who had problems understanding the assignments. In the courses Introduction to
+								Human-Computer Interactions and Experimental System Development I teach in a 3-hour
+								session where the students conduct theoretical exercises.
 							</span>
 							<p>Below is an overview of the courses I have TA'ed in.</p>
 						</div>
-						<div id="tableContainer" className="normalc">
-							<table className="table table-striped">
+						<div id='tableContainer' className='normalc'>
+							<table className='table table-striped'>
 								<thead>
 									<tr>
-										<th scope="col">Course</th>
-										<th scope="col">Description</th>
-										<th scope="col">Taught</th>
+										<th scope='col'>Course</th>
+										<th scope='col'>Description</th>
+										<th scope='col'>Taught</th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr>
-										<th scope="row">The Web of Things</th>
+										<th scope='row'>The Web of Things</th>
 										<td>
 											The purpose of the course is to introduce the WWW and its architecture, as
 											well as the concepts and realities behind pervasive computing.
@@ -38,7 +38,7 @@ export default class skills extends Component {
 										<td>January 2020 - March 2020</td>
 									</tr>
 									<tr>
-										<th scope="row">Introduction to Human-Computer Interaction</th>
+										<th scope='row'>Introduction to Human-Computer Interaction</th>
 										<td>
 											The course aims to introduce students to the basic elements of
 											Human-Computer Interaction (HCI). The goal is for students to gain a solid
@@ -52,17 +52,37 @@ export default class skills extends Component {
 										<td>August 2020 - December 2020</td>
 									</tr>
 									<tr>
-										<th scope="row">Experimental System Development</th>
+										<th scope='row'>Experimental System Development</th>
 										<td>
-											The course aims to introduce students to systems development, especially experimental systems development with user involvement, and practical experience with a number of techniques and methods for experimental systems development. After the course the participants will have practical experience with conducting an experimental project with user participation and have a foundation for understanding different types of system development processes.
-											The working method of the course will also train the participants ability to seek information on their own, to plan and conduct projects, to convey and communicate academic issues and to read and understand scientific papers.
+											The course aims to introduce students to systems development, especially
+											experimental systems development with user involvement, and practical
+											experience with a number of techniques and methods for experimental systems
+											development. After the course the participants will have practical
+											experience with conducting an experimental project with user participation
+											and have a foundation for understanding different types of system
+											development processes. The working method of the course will also train the
+											participants ability to seek information on their own, to plan and conduct
+											projects, to convey and communicate academic issues and to read and
+											understand scientific papers.
+										</td>
+										<td>January 2020 - June 2020</td>
+									</tr>
+									<tr>
+										<th scope='row'>Deep Learning for Visual Recognition</th>
+										<td>
+											In the course students learn to implement, train and debug their own neural
+											networks and gain a theoretical understanding of neural network
+											architectures and optimization strategies. The weekly hands-on exercises
+											will involve setting up computer vision problems, like image recognition,
+											and apply learning algorithms and practical engineering tricks for training
+											and fine-tuning the networks.
 										</td>
 										<td>Currently TA'ing</td>
 									</tr>
 								</tbody>
 							</table>
 						</div>
-						<div id="mobile">
+						<div id='mobile'>
 							<div>
 								<h4>The Web of Things</h4>
 								<p>
@@ -85,8 +105,25 @@ export default class skills extends Component {
 							<div>
 								<h4>Experimental System Development</h4>
 								<p>
-									The course aims to introduce students to systems development, especially experimental systems development with user involvement, and practical experience with a number of techniques and methods for experimental systems development. After the course the participants will have practical experience with conducting an experimental project with user participation and have a foundation for understanding different types of system development processes.
-									The working method of the course will also train the participants ability to seek information on their own, to plan and conduct projects, to convey and communicate academic issues and to read and understand scientific papers.
+									The course aims to introduce students to systems development, especially
+									experimental systems development with user involvement, and practical experience
+									with a number of techniques and methods for experimental systems development. After
+									the course the participants will have practical experience with conducting an
+									experimental project with user participation and have a foundation for understanding
+									different types of system development processes. The working method of the course
+									will also train the participants ability to seek information on their own, to plan
+									and conduct projects, to convey and communicate academic issues and to read and
+									understand scientific papers.
+								</p>
+							</div>
+							<div>
+								<h4>Deep Learning for Visual Recognition</h4>
+								<p>
+									In the course students learn to implement, train and debug their own neural networks
+									and gain a theoretical understanding of neural network architectures and
+									optimization strategies. The weekly hands-on exercises will involve setting up
+									computer vision problems, like image recognition, and apply learning algorithms and
+									practical engineering tricks for training and fine-tuning the networks.
 								</p>
 							</div>
 						</div>
